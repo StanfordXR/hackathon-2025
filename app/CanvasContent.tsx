@@ -210,7 +210,7 @@ export default function CanvasContent({
       <EffectComposer>
         <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
       </EffectComposer>
-      <OrbitControls enableRotate enablePan />
+      {/*<OrbitControls enableRotate enablePan />*/}
       {/*<Stats />*/}
     </>
   );
