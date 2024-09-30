@@ -66,7 +66,7 @@ function GradientCylinder({
 
   useEffect(() => {
     // @ts-ignore
-    //mesh.current.material.uniforms.time.value = time;
+    mesh.current.material.uniforms.time.value = time;
   }, [time]);
 
   return (
@@ -77,7 +77,14 @@ function GradientCylinder({
       ref={mesh}
     >
       <cylinderGeometry args={[0.002, 0.002, length, 6]} />
-      <meshBasicMaterial color={mix(pink, blue, 1)} />
+      <shaderMaterial
+        uniforms={uniforms}
+        fragmentShader={fragmentShader}
+        vertexShader={vertexShader}
+        toneMapped={false}
+        fog={true}
+        needsUpdate
+      />
     </mesh>
   );
 }
@@ -123,7 +130,7 @@ export default function CanvasContent({
       }
       {/*<fog attach="fog" color="black" near={2} far={7} />*/}
       <group rotation={[0, 0, (-Math.PI / 4) * 0]}>
-        {Array.from({ length: 4 }, (item, index) => (
+        {/*Array.from({ length: 4 }, (item, index) => (
           <mesh position={[(index - 2) / 1 + 0.5, 1, -1.7]} key={index}>
             <pointLight
               color={mix(
@@ -146,7 +153,7 @@ export default function CanvasContent({
               intensity={0.7}
             />
           </mesh>
-        ))}
+        ))*/}
         {Array.from({ length: 5 }, (item, index) => (
           <GradientCylinder
             position={[0, 1, 0.1 - index - 2]}
