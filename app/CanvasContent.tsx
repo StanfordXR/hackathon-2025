@@ -205,7 +205,7 @@ export default function CanvasContent({
           </mesh>
         ))}
       </group>
-      <Text3D
+      {/*<Text3D
         font="/Orbitron_Regular.json"
         position={[
           aspect > 1.4 ? -1.67 : -0.5,
@@ -223,7 +223,7 @@ export default function CanvasContent({
       >
         Immerse {aspect < 1.4 && "\n "}the Bay
         <meshPhongMaterial color={"white"} shininess={100} specular={"white"} />
-      </Text3D>
+      </Text3D>*/}
       <EffectComposer>
         <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
       </EffectComposer>
