@@ -104,7 +104,7 @@ export default function CanvasContent({
   useFrame((state, delta) => setTime(time + 0.02));
   const [fog, setFog] = useState(1);
   useFrame((state, delta) => {
-    if (fog > 0.25) setFog(fog - 0.01);
+    if (fog > 0.25) setFog(fog - 0.015);
   });
 
   const aspect =

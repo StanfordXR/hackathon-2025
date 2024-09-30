@@ -37,12 +37,12 @@ export default function Home() {
           >
             Apply
           </a>
-          <a
+          {/*<a
             href={""}
             className="font-semibold text-white text-2xl underline p-1 m-2"
           >
             Sponsor
-          </a>
+          </a>*/}
         </div>
       </div>
     </div>
