@@ -44,10 +44,12 @@ function GradientCylinder({
   position,
   key,
   time,
+  length,
 }: {
   position?: Vector3;
   key: number;
   time: number;
+  length: number;
 }) {
   const mesh = useRef<Mesh>(null);
 
@@ -74,7 +76,7 @@ function GradientCylinder({
       key={key}
       ref={mesh}
     >
-      <cylinderGeometry args={[0.002, 0.002, 16, 6]} />
+      <cylinderGeometry args={[0.002, 0.002, length, 6]} />
       <shaderMaterial
         uniforms={uniforms}
         fragmentShader={fragmentShader}
@@ -101,18 +103,31 @@ export default function CanvasContent({
   canvasRef?: RefObject<HTMLCanvasElement | null>;
 }) {
   const [time, setTime] = useState(0);
-  useFrame((state, delta) => setTime(time + 0.02));
-  const [fog, setFog] = useState(1);
+  const [prevTime, setPrevTime] = useState(-1);
   useFrame((state, delta) => {
-    if (fog > 0.35) setFog(fog - 0.015);
+    if (prevTime === -1) {
+      setPrevTime(performance.now());
+    } else {
+      setTime(time + (performance.now() - prevTime) * 0.0025);
+      setPrevTime(performance.now());
+    }
   });
 
   const aspect =
     (canvasRef?.current?.width ?? 2) / (canvasRef?.current?.height ?? 1);
 
+  const numColumns = Math.ceil(aspect * 3.2) * 2;
+  console.log(numColumns);
+
   return (
     <>
-      {<fogExp2 attach="fog" color="black" density={fog} />}
+      {
+        <fogExp2
+          attach="fog"
+          color="black"
+          density={0.9 - time > 0.35 ? 0.9 - time : 0.35}
+        />
+      }
       {/*<fog attach="fog" color="black" near={2} far={7} />*/}
       <group rotation={[0, 0, (-Math.PI / 4) * 0]}>
         {Array.from({ length: 4 }, (item, index) => (
@@ -123,7 +138,7 @@ export default function CanvasContent({
                 blue,
                 0.5 + 0.5 * Math.sin((index - 1.5) * 4 + time)
               )}
-              intensity={0.6}
+              intensity={0.7}
             />
           </mesh>
         ))}
@@ -135,53 +150,55 @@ export default function CanvasContent({
                 blue,
                 0.5 + 0.5 * Math.sin((index - 1.5) * 4 + time)
               )}
-              intensity={0.6}
+              intensity={0.7}
             />
           </mesh>
         ))}
-        {Array.from({ length: 6 }, (item, index) => (
+        {Array.from({ length: 5 }, (item, index) => (
           <GradientCylinder
-            position={[0, 1, 0.1 - index - 1]}
+            position={[0, 1, 0.1 - index - 2]}
             key={index}
             time={time}
+            length={6 * aspect}
           />
         ))}
-        {Array.from({ length: 6 }, (item, index) => (
+        {Array.from({ length: 5 }, (item, index) => (
           <GradientCylinder
-            position={[0, -1, 0.1 - index - 1]}
+            position={[0, -1, 0.1 - index - 2]}
             key={index}
             time={time}
+            length={6 * aspect}
           />
         ))}
-        {Array.from({ length: 16 }, (item, index) => (
+        {Array.from({ length: numColumns }, (item, index) => (
           <mesh
-            position={[(index - 8) / 1 + 0.5, 1, -4]}
+            position={[(index - numColumns / 2) / 1 + 0.5, 1, -4]}
             rotation={[Math.PI / 2, 0, 0]}
             key={index}
           >
-            <cylinderGeometry args={[0.008, 0.008, 9, 6]} />
+            <cylinderGeometry args={[0.008, 0.008, 8, 6]} />
             <meshBasicMaterial
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 7.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - numColumns / 2 + 0.5) * 4 + time)
               )}
               toneMapped={false}
             />
           </mesh>
         ))}
-        {Array.from({ length: 16 }, (item, index) => (
+        {Array.from({ length: numColumns }, (item, index) => (
           <mesh
-            position={[(index - 8) / 1 + 0.5, -1, -4]}
+            position={[(index - numColumns / 2) / 1 + 0.5, -1, -4]}
             rotation={[Math.PI / 2, 0, 0]}
             key={index}
           >
-            <cylinderGeometry args={[0.008, 0.008, 9, 6]} />
+            <cylinderGeometry args={[0.008, 0.008, 8, 6]} />
             <meshBasicMaterial
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 7.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - numColumns / 2 + 0.5) * 4 + time)
               )}
               toneMapped={false}
             />
@@ -190,14 +207,18 @@ export default function CanvasContent({
       </group>
       <Text3D
         font="/Orbitron_Regular.json"
-        position={[aspect > 1.4 ? -1.7 : -0.5, aspect > 1.4 ? 0.15 : 0.4, -3]}
-        size={aspect > 1.4 ? 0.265 : 0.15}
+        position={[
+          aspect > 1.4 ? -1.67 : -0.5,
+          aspect > 1.4 ? 0.15 : 0.4,
+          -2.9,
+        ]}
+        size={aspect > 1.4 ? 0.26 : 0.15}
         bevelEnabled
-        curveSegments={12}
+        curveSegments={8}
         bevelThickness={0.01}
         bevelSize={0.01}
         bevelOffset={0}
-        bevelSegments={10}
+        bevelSegments={8}
         height={0.05}
       >
         Immerse {aspect < 1.4 && "\n "}the Bay
@@ -207,7 +228,7 @@ export default function CanvasContent({
         <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
-      {/*<Stats />*/}
+      {<Stats />}
     </>
   );
 }
