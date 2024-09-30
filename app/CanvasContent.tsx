@@ -130,7 +130,7 @@ export default function CanvasContent({
       }
       {/*<fog attach="fog" color="black" near={2} far={7} />*/}
       <group rotation={[0, 0, (-Math.PI / 4) * 0]}>
-        {/*Array.from({ length: 4 }, (item, index) => (
+        {Array.from({ length: 4 }, (item, index) => (
           <mesh position={[(index - 2) / 1 + 0.5, 1, -1.7]} key={index}>
             <pointLight
               color={mix(
@@ -153,7 +153,7 @@ export default function CanvasContent({
               intensity={0.7}
             />
           </mesh>
-        ))*/}
+        ))}
         {Array.from({ length: 5 }, (item, index) => (
           <GradientCylinder
             position={[0, 1, 0.1 - index - 2]}
@@ -205,7 +205,7 @@ export default function CanvasContent({
           </mesh>
         ))}
       </group>
-      {/*<Text3D
+      <Text3D
         font="/Orbitron_Regular.json"
         position={[
           aspect > 1.4 ? -1.67 : -0.5,
@@ -223,12 +223,12 @@ export default function CanvasContent({
       >
         Immerse {aspect < 1.4 && "\n "}the Bay
         <meshPhongMaterial color={"white"} shininess={100} specular={"white"} />
-      </Text3D>*/}
-      {/*<EffectComposer>
+      </Text3D>
+      <EffectComposer>
         <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
-      </EffectComposer>*/}
+      </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
-      {<Stats />}
+      {/*<Stats />*/}
     </>
   );
 }
