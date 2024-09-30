@@ -33,7 +33,7 @@ const fragmentShader = `
     void main() {
         float n  = 0.5+0.5*(sin(vY * 2.0 + time)); 
 
-        vec3 color = mix(vec3(0. / 70., 206. / 70., 225. / 70.),vec3(172. / 70., 17. / 70., 255. / 70.), n);
+        vec3 color = mix(vec3(0., 3.43333333333, 3.75),vec3(2.86666666667, 0.28333333333, 4.25), n);
 
         gl_FragColor = vec4(color, 1.0);
 
@@ -77,14 +77,7 @@ function GradientCylinder({
       ref={mesh}
     >
       <cylinderGeometry args={[0.002, 0.002, length, 6]} />
-      <shaderMaterial
-        uniforms={uniforms}
-        fragmentShader={fragmentShader}
-        vertexShader={vertexShader}
-        toneMapped={false}
-        fog={true}
-        needsUpdate
-      />
+      <meshBasicMaterial color={mix(pink, blue, 1)} />
     </mesh>
   );
 }
