@@ -224,9 +224,9 @@ export default function CanvasContent({
         Immerse {aspect < 1.4 && "\n "}the Bay
         <meshPhongMaterial color={"white"} shininess={100} specular={"white"} />
       </Text3D>*/}
-      <EffectComposer>
+      {/*<EffectComposer>
         <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
-      </EffectComposer>
+      </EffectComposer>*/}
       {/*<OrbitControls enableRotate enablePan />*/}
       {<Stats />}
     </>
