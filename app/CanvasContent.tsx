@@ -9,8 +9,8 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Stats, OrbitControls, Text3D, Stars } from "@react-three/drei";
 import { timerLocal } from "three/webgpu";
 
-const pink = new Color(172 / 70, 17 / 70, 255 / 70);
-const blue = new Color(0 / 70, 206 / 70, 225 / 70);
+const pink = new Color(172 / 60, 17 / 60, 255 / 60);
+const blue = new Color(0 / 60, 206 / 60, 225 / 60);
 
 const vertexShader = `
   #include <fog_pars_vertex>
@@ -74,7 +74,7 @@ function GradientCylinder({
       key={key}
       ref={mesh}
     >
-      <cylinderGeometry args={[0.002, 0.002, 29, 6]} />
+      <cylinderGeometry args={[0.002, 0.002, 16, 6]} />
       <shaderMaterial
         uniforms={uniforms}
         fragmentShader={fragmentShader}
@@ -104,7 +104,7 @@ export default function CanvasContent({
   useFrame((state, delta) => setTime(time + 0.02));
   const [fog, setFog] = useState(1);
   useFrame((state, delta) => {
-    if (fog > 0.25) setFog(fog - 0.015);
+    if (fog > 0.35) setFog(fog - 0.015);
   });
 
   const aspect =
@@ -113,89 +113,85 @@ export default function CanvasContent({
   return (
     <>
       {<fogExp2 attach="fog" color="black" density={fog} />}
-      {/*        <fog attach="fog" color="black" near={5} far={25} />
-       */}
+      {/*<fog attach="fog" color="black" near={2} far={7} />*/}
       <group rotation={[0, 0, (-Math.PI / 4) * 0]}>
-        {Array.from({ length: 6 }, (item, index) => (
-          <mesh position={[(index - 3) / 1 + 0.5, 1, -2.7]} key={index}>
+        {Array.from({ length: 4 }, (item, index) => (
+          <mesh position={[(index - 2) / 1 + 0.5, 1, -1.7]} key={index}>
             <pointLight
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 2.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - 1.5) * 4 + time)
               )}
               intensity={0.6}
             />
-            {/* <sphereGeometry args={[0.01, 10, 10]} />*/}
           </mesh>
         ))}
-        {Array.from({ length: 6 }, (item, index) => (
-          <mesh position={[(index - 3) / 1 + 0.5, -0.5, -2.7]} key={index}>
+        {Array.from({ length: 4 }, (item, index) => (
+          <mesh position={[(index - 2) / 1 + 0.5, -0.5, -1.7]} key={index}>
             <pointLight
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 2.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - 1.5) * 4 + time)
               )}
               intensity={0.6}
             />
-            {/* <sphereGeometry args={[0.01, 10, 10]} />*/}
           </mesh>
         ))}
-        {Array.from({ length: 10 }, (item, index) => (
+        {Array.from({ length: 6 }, (item, index) => (
           <GradientCylinder
-            position={[0, 1, 0.1 - index]}
+            position={[0, 1, 0.1 - index - 1]}
             key={index}
             time={time}
           />
         ))}
-        {Array.from({ length: 10 }, (item, index) => (
+        {Array.from({ length: 6 }, (item, index) => (
           <GradientCylinder
-            position={[0, -1, 0.1 - index]}
+            position={[0, -1, 0.1 - index - 1]}
             key={index}
             time={time}
           />
         ))}
-        {Array.from({ length: 20 }, (item, index) => (
+        {Array.from({ length: 16 }, (item, index) => (
           <mesh
-            position={[(index - 10) / 1 + 0.5, 1, -25]}
+            position={[(index - 8) / 1 + 0.5, 1, -4]}
             rotation={[Math.PI / 2, 0, 0]}
             key={index}
           >
-            <cylinderGeometry args={[0.008, 0.008, 50, 6]} />
+            <cylinderGeometry args={[0.008, 0.008, 9, 6]} />
             <meshBasicMaterial
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 9.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - 7.5) * 4 + time)
               )}
               toneMapped={false}
             />
           </mesh>
         ))}
-        {Array.from({ length: 20 }, (item, index) => (
+        {Array.from({ length: 16 }, (item, index) => (
           <mesh
-            position={[(index - 10) / 1 + 0.5, -1, -25]}
+            position={[(index - 8) / 1 + 0.5, -1, -4]}
             rotation={[Math.PI / 2, 0, 0]}
             key={index}
           >
-            <cylinderGeometry args={[0.008, 0.008, 50, 6]} />
+            <cylinderGeometry args={[0.008, 0.008, 9, 6]} />
             <meshBasicMaterial
               color={mix(
                 pink,
                 blue,
-                0.5 + 0.5 * Math.sin((index - 9.5) * 4 + time)
+                0.5 + 0.5 * Math.sin((index - 7.5) * 4 + time)
               )}
               toneMapped={false}
             />
           </mesh>
         ))}
       </group>
-
       <Text3D
         font="/Orbitron_Regular.json"
-        position={[aspect > 1.4 ? -2.25 : -0.6, aspect > 1.4 ? 0.2 : 0.5, -4]}
-        size={aspect > 1.4 ? 0.35 : 0.18}
+        position={[aspect > 1.4 ? -1.7 : -0.5, aspect > 1.4 ? 0.15 : 0.4, -3]}
+        size={aspect > 1.4 ? 0.265 : 0.15}
         bevelEnabled
         curveSegments={12}
         bevelThickness={0.01}
