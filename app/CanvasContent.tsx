@@ -66,7 +66,7 @@ function GradientCylinder({
 
   useEffect(() => {
     // @ts-ignore
-    mesh.current.material.uniforms.time.value = time;
+    //mesh.current.material.uniforms.time.value = time;
   }, [time]);
 
   return (
