@@ -229,7 +229,7 @@ export default function CanvasContent({
           intensity={2.0}
           luminanceThreshold={0}
           kernelSize={3}
-          resolutionScale={0.5}
+          resolutionScale={0.1}
         />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
