@@ -82,7 +82,7 @@ function GradientCylinder({
         fragmentShader={fragmentShader}
         vertexShader={vertexShader}
         toneMapped={false}
-        fog={true}
+        fog
         needsUpdate
       />
     </mesh>
@@ -225,10 +225,15 @@ export default function CanvasContent({
         <meshPhongMaterial color={"white"} shininess={100} specular={"white"} />
       </Text3D>
       <EffectComposer>
-        <Bloom intensity={2.0} luminanceThreshold={0} kernelSize={3} />
+        <Bloom
+          intensity={2.0}
+          luminanceThreshold={0}
+          kernelSize={3}
+          resolutionScale={0.5}
+        />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
-      {/*<Stats />*/}
+      {<Stats />}
     </>
   );
 }
