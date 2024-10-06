@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        aldrich: ["var(--font-aldrich)"],
+        orbitron: ["var(--font-orbitron)"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

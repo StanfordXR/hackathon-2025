@@ -27,13 +27,13 @@ export default function Home() {
       </Canvas>
       <div className="absolute z-10 top-0 left-0 w-screen h-screen">
         <div className="h-1/2"></div>
-        <div className="font-bold text-base md:text-2xl text-white flex items-center justify-center">
-          NOVEMBER 8-10 • STANFORD, CA
+        <div className="font-orbitron font-bold text-base md:text-2xl text-white flex items-center justify-center">
+          November 8-10 • Stanford, CA
         </div>
         <div className="my-2 flex flex-col md:flex-row items-center justify-center">
           <a
             href={"https://93sypddfktx.typeform.com/to/yZWbcdg4"}
-            className="font-semibold text-white text-2xl underline p-1 m-2"
+            className="font-orbitron font-semibold text-white text-2xl underline p-1 m-2"
           >
             Apply
           </a>

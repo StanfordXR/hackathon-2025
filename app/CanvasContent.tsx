@@ -241,7 +241,7 @@ export default function CanvasContent({
         />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
-      {<Stats />}
+      {/*<Stats />*/}
     </>
   );
 }

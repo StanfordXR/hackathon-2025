@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Orbitron } from "next/font/google";
+import { Orbitron, Aldrich } from "next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -14,7 +14,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const orbitron = Orbitron({ subsets: ["latin"] });
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
+const aldrich = Aldrich({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-aldrich",
+});
 
 export const metadata: Metadata = {
   title: "Immerse the Bay | Stanford",
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${orbitron.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${orbitron.variable} ${geistSans.variable} ${geistMono.variable} ${aldrich.variable} antialiased`}
       >
         {children}
       </body>
