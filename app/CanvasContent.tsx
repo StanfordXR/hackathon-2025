@@ -5,7 +5,12 @@ import { Color, Mesh, UniformsLib, UniformsUtils } from "three";
 
 import { Canvas, Vector3, useFrame } from "@react-three/fiber";
 import Image from "next/image";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import {
+  Bloom,
+  DepthOfField,
+  EffectComposer,
+  Vignette,
+} from "@react-three/postprocessing";
 import { Stats, OrbitControls, Text3D, Stars } from "@react-three/drei";
 import { timerLocal } from "three/webgpu";
 
@@ -156,7 +161,7 @@ export default function CanvasContent({
         ))}
         {Array.from({ length: 5 }, (item, index) => (
           <GradientCylinder
-            position={[0, 1, 0.1 - index - 2]}
+            position={[0, 1.2, 0.1 - index - 2]}
             key={index}
             time={time}
             length={6 * aspect}
@@ -172,7 +177,7 @@ export default function CanvasContent({
         ))}
         {Array.from({ length: numColumns }, (item, index) => (
           <mesh
-            position={[(index - numColumns / 2) / 1 + 0.5, 1, -4]}
+            position={[(index - numColumns / 2) / 1 + 0.5, 1.2, -4]}
             rotation={[Math.PI / 2, 0, 0]}
             key={index}
           >
@@ -208,11 +213,11 @@ export default function CanvasContent({
       <Text3D
         font="/Orbitron_Regular.json"
         position={[
-          aspect > 1.4 ? -1.67 : -0.5,
+          aspect > 1.4 ? -1.42 : -0.5,
           aspect > 1.4 ? 0.15 : 0.4,
           -2.9,
         ]}
-        size={aspect > 1.4 ? 0.26 : 0.15}
+        size={aspect > 1.4 ? 0.22 : 0.15}
         bevelEnabled
         curveSegments={8}
         bevelThickness={0.01}
@@ -229,7 +234,7 @@ export default function CanvasContent({
           intensity={2.0}
           luminanceThreshold={0}
           kernelSize={3}
-          resolutionScale={0.1}
+          resolutionScale={0}
         />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
