@@ -235,6 +235,9 @@ export default function CanvasContent({
           luminanceThreshold={0}
           kernelSize={3}
           resolutionScale={0}
+          mipmapBlur
+          levels={0}
+          radius={0}
         />
       </EffectComposer>
       {/*<OrbitControls enableRotate enablePan />*/}
