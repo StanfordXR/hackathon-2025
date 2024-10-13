@@ -11,6 +11,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/footer";
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 const aldrich = Aldrich({
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

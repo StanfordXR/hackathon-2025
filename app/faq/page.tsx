@@ -9,6 +9,11 @@ export default function Home() {
   return (
     <main id="main">
       <div className="w-screen bg-immersive mb-[50px] pt-[140px] flex flex-col justify-center items-center">
+        <div
+          className={`text-white font-semibold font-orbitron md:text-3xl text-xl mb-6`}
+        >
+          Frequently asked questions
+        </div>
         <div className={`w-[80%] mx-10 h-full`}>
           <hr className={`shadow-glowing my-1 mb-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>

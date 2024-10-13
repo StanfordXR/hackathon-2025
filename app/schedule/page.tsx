@@ -9,6 +9,9 @@ export default function Home() {
   return (
     <main id="main">
       <div className="w-[screen] h-screen bg-immersive pt-[140px] flex flex-col justify-center items-center">
+        <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
+          Schedule
+        </div>
         <div className={`w-[80%] mx-10 h-full`}>
           <div className={`text-white font-orbitron text-3xl`}>November 8</div>
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
