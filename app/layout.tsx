@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Orbitron, Aldrich } from "next/font/google";
+import {
+  Orbitron,
+  Aldrich,
+  Open_Sans,
+  Manrope,
+  PT_Sans,
+  PT_Sans_Caption,
+  Kanit,
+} from "next/font/google";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import NavBar from "./components/layout/NavBar";
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 const aldrich = Aldrich({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-aldrich",
+});
+const pt_sans = Kanit({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pt_sans",
 });
 
 export const metadata: Metadata = {
@@ -34,8 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${orbitron.variable} ${geistSans.variable} ${geistMono.variable} ${aldrich.variable} antialiased`}
+        className={`${orbitron.variable}  ${aldrich.variable} ${pt_sans.variable} antialiased bg-black`}
       >
+        <NavBar />
         {children}
       </body>
     </html>
