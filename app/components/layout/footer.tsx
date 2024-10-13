@@ -25,9 +25,12 @@ export default function Footer() {
             Stanford XR
           </span>
         </Link>
-        <p className="p-1 text-[12px] md:text-[16px] text-right">
-          Immerse the Bay
-        </p>
+        <a
+          href={"https://www.stanfordxr.org/"}
+          className="underline underline-offset-1	p-1 text-[12px] md:text-[16px] text-right"
+        >
+          www.stanfordxr.org
+        </a>
       </div>
     </div>
   );
