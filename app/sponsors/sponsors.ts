@@ -10,15 +10,15 @@ export const sponsors: Sponsor[] = [
     imgsrc: "/sponsors/meta.png",
   },
   {
-    name: "Snap AR",
-    imgsrc: "/sponsors/snapar.png",
+    name: "Amazon",
+    imgsrc: "/sponsors/amazon.png",
   },
   {
     name: "NVIDIA",
     imgsrc: "/sponsors/nvidia.png",
   },
   {
-    name: "AWS",
-    imgsrc: "/sponsors/aws.png",
+    name: "Snap AR",
+    imgsrc: "/sponsors/snapar.png",
   },
 ];
