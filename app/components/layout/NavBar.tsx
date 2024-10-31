@@ -49,7 +49,7 @@ export default function NavBar() {
           </div>
           <a
             href={"https://93sypddfktx.typeform.com/to/yZWbcdg4"}
-            className="order-2 md:order-3 font-ptsans font-semibold text-black text-sm px-[30px] py-[7px] md:px-[40px] md:py-2 rounded-[100px]  bg-white"
+            className="order-2 md:order-3 font-ptsans font-semibold text-black text-sm px-[30px] py-[7px] md:px-[40px] md:py-2 rounded-[100px] bg-white hover:bg-slate-200"
           >
             Apply
           </a>

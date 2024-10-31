@@ -21,4 +21,8 @@ export const sponsors: Sponsor[] = [
     name: "Snap AR",
     imgsrc: "/sponsors/snapar.png",
   },
+  {
+    name: "Mark III",
+    imgsrc: "/sponsors/markiii.png",
+  },
 ];

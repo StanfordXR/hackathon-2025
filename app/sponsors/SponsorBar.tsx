@@ -10,7 +10,7 @@ export default function SponsorBar() {
       <div
         className={`w-full h-full [mask:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]`}
       >
-        <div className="flex h-full gap-[4rem] p-0 m-0 flex-nowrap animate-scroll w-[1456px] max-w-[1456px]">
+        <div className="flex h-full gap-[4rem] p-0 m-0 flex-nowrap animate-scroll w-[1703.7px] max-w-[1703.7px]">
           {sponsors.map((sponsor, index) => (
             <img
               src={sponsor.imgsrc}

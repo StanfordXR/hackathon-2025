@@ -20,6 +20,8 @@ const config: Config = {
       backgroundImage: {
         "fade-gradient":
           "radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%)",
+        "pink-blue-hover":
+          "linear-gradient(to right, #aef1f2 0%, #e4bee8 100%)",
         "pink-blue": "linear-gradient(to right, #B7FDFE 0%, #F9D2FD 100%)",
         immersive:
           "radial-gradient(ellipse at center, #110618 0%, rgba(0,0,0,1) 100%)",
@@ -28,7 +30,7 @@ const config: Config = {
         glowing: "0 0 5px #fff, -2px -1px 4px #f0f, 2px 1px 4px #0ff",
       },
       animation: {
-        scroll: "scroll 25s forwards linear infinite",
+        scroll: "scroll 20s forwards linear infinite",
       },
       keyframes: {
         scroll: {
