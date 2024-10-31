@@ -30,7 +30,7 @@ const config: Config = {
         glowing: "0 0 5px #fff, -2px -1px 4px #f0f, 2px 1px 4px #0ff",
       },
       animation: {
-        scroll: "scroll 20s forwards linear infinite",
+        scroll: "scroll 25s forwards linear infinite",
       },
       keyframes: {
         scroll: {

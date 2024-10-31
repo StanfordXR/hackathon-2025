@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="main">
-      <div className="w-screen h-screen bg-immersive md:p-[200px] pt-[120px] flex justify-center items-center flex-col">
+      <div className="w-screen min-h-screen bg-immersive md:p-[200px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
         <div
           className={`text-white font-semibold font-orbitron text-3xl mb-6 mt-8`}
         >
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <div className="flex w-full h-full p-0 m-0 flex-wrap justify-center items-center">
           {sponsors.map((sponsor, index) => (
-            <div className="h-[50px] mx-[50px] my-[20px]">
+            <div className="h-[50px] mx-[50px] my-[20px] p-1">
               <img
                 src={sponsor.imgsrc}
                 alt={sponsor.name}

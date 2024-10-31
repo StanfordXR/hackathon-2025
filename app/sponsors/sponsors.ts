@@ -22,6 +22,22 @@ export const sponsors: Sponsor[] = [
     imgsrc: "/sponsors/snapar.png",
   },
   {
+    name: "Niantic",
+    imgsrc: "/sponsors/niantic.png",
+  },
+  {
+    name: "Gabb",
+    imgsrc: "/sponsors/gabb.png",
+  },
+  {
+    name: "Membit",
+    imgsrc: "/sponsors/membit.png",
+  },
+  {
+    name: "Immersal",
+    imgsrc: "/sponsors/immersal.png",
+  },
+  {
     name: "Mark III",
     imgsrc: "/sponsors/markiii.png",
   },
