@@ -2,24 +2,32 @@ import { Sponsor } from "../types";
 
 export const sponsors: Sponsor[] = [
   {
-    name: "ShapesXR",
-    imgsrc: "/sponsors/shapesxr.svg",
-  },
-  {
-    name: "Meta",
-    imgsrc: "/sponsors/meta.png",
+    name: "Mark III",
+    imgsrc: "/sponsors/markiii.png",
   },
   {
     name: "Amazon",
     imgsrc: "/sponsors/amazon.png",
   },
   {
-    name: "NVIDIA",
-    imgsrc: "/sponsors/nvidia.png",
-  },
-  {
     name: "Snap AR",
     imgsrc: "/sponsors/snapar.png",
+  },
+  {
+    name: "Meta",
+    imgsrc: "/sponsors/meta.png",
+  },
+  {
+    name: "Ramen VR",
+    imgsrc: "/sponsors/ramenvr.png",
+  },
+  {
+    name: "ShapesXR",
+    imgsrc: "/sponsors/shapesxr.svg",
+  },
+  {
+    name: "NVIDIA",
+    imgsrc: "/sponsors/nvidia.png",
   },
   {
     name: "Niantic",
@@ -30,15 +38,11 @@ export const sponsors: Sponsor[] = [
     imgsrc: "/sponsors/gabb.png",
   },
   {
-    name: "Membit",
-    imgsrc: "/sponsors/membit.png",
-  },
-  {
     name: "Immersal",
     imgsrc: "/sponsors/immersal.png",
   },
   {
-    name: "Mark III",
-    imgsrc: "/sponsors/markiii.png",
+    name: "Membit",
+    imgsrc: "/sponsors/membit.png",
   },
 ];
