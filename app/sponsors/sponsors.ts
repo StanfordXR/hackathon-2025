@@ -21,6 +21,10 @@ export const sponsors: SponsorTier[] = [
         name: "Ramen VR",
         imgsrc: "/sponsors/ramenvr.png",
       },
+      {
+        name: "AWE",
+        imgsrc: "/sponsors/awe.svg",
+      },
     ],
   },
   {
