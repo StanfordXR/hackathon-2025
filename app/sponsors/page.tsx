@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { sponsors } from "./sponsors";
+import Tier from "./Tier";
 
 export const metadata: Metadata = {
   title: "Sponsors | Immerse the Bay | Stanford",
@@ -9,23 +10,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="main">
-      <div className="w-screen min-h-screen bg-immersive md:p-[200px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
-        <div
-          className={`text-white font-semibold font-orbitron text-3xl mb-6 mt-8`}
-        >
-          Sponsors
-        </div>
-        <div className="flex w-full h-full p-0 m-0 flex-wrap justify-center items-center">
-          {sponsors.map((sponsor, index) => (
-            <div className="h-[50px] mx-[50px] my-[20px] p-1">
-              <img
-                src={sponsor.imgsrc}
-                alt={sponsor.name}
-                className="h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="w-screen min-h-screen bg-immersive md:p-[200px] md:pt-[120px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
+        {sponsors.map((tier, index) => (
+          <Tier tier={tier} key={index} />
+        ))}
       </div>
     </main>
   );

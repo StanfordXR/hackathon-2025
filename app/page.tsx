@@ -43,12 +43,16 @@ export default function Home() {
           <SponsorBar />
         </div>
       </div>
-      <div className="w-screen h-auto text-white flex justify-center item-center flex-row p-[20px]">
-        <div className="w-full max-w-[600px] h-auto shadow-glowing rounded-[50px] p-[25px] mt-[150px] mb-[200px]">
+      <div className="w-screen h-auto text-white flex justify-center items-center flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
+        <img
+          src="/graphics/past.jpg"
+          className="max-h-[350px] object-contain	m-1 md:mr-8 mt-10 md:mt-1 md:mb-0 mb-10 rounded-[50px]"
+        ></img>
+        <div className="w-full max-w-[600px] h-auto shadow-glowing rounded-[50px] p-[25px] ">
           <div className="font-orbitron text-2xl mb-4">
             What is Immerse the Bay?
           </div>
-          <div className="font-ptsans text-lg ">
+          <div className="font-ptsans text-lg">
             Situated at the heart of Silicon Valley, Immerse The Bay stands as
             Stanford University's leading XR hackathon. We unite students,
             industry experts, tech enthusiasts, and visionaries from all corners

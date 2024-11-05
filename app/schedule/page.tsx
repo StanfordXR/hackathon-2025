@@ -26,7 +26,10 @@ export default function Home() {
           </div>
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
-            <span className={`font-semibold`}>10:00 am - 12:00 pm:</span>{" "}
+            <span className={`font-semibold`}>10:00 am - 12:00 pm:</span> <br />
+            <span className={`font-semibold`}>2:00 pm - 3:00 pm:</span> Closing
+            ceremony
+            <br />
             Judging <span className={`italic`}>(Exact hours TBA)</span>
           </div>
           <div

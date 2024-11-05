@@ -16,6 +16,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        platinum: "#E5E4E2",
+        gold: "#FFD700",
+        silver: "#C0C0C0",
       },
       backgroundImage: {
         "fade-gradient":
@@ -30,11 +33,12 @@ const config: Config = {
         glowing: "0 0 5px #fff, -2px -1px 4px #f0f, 2px 1px 4px #0ff",
       },
       animation: {
-        scroll: "scroll 25s forwards linear infinite",
+        scroll: "scroll 35s forwards linear infinite",
       },
       keyframes: {
         scroll: {
-          to: { transform: "translate(calc(-50% - 2rem))" },
+          from: { transform: "translate(calc(3rem))" },
+          to: { transform: "translate(calc(-50% + 1rem))" },
         },
       },
     },

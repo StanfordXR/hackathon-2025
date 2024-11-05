@@ -4,17 +4,13 @@ export default function Footer() {
   return (
     <div className="w-full bg-black font-medium flex items-start justify-between mx-auto p-10 md:p-14 text-white font-ptsans border-t border-white border-opacity-25">
       <div className="text-[12px] md:text-[16px] items-start flex flex-col">
-        <p className="p-1">Stay in touch with Stanford XR.</p>
-        <p className="p-1">Follow us on our socials</p>
-        <div className="w-full flex items-start justify-start p-1 pt-3">
-          <a href="https://www.instagram.com/stanford_xr/">
-            <img src="/graphics/instagram.svg" className="h-9" />
+        <p className="p-1 pb-4">In partnership with</p>
+        <div className={"flex items-start align-center flex-col w-[130px]"}>
+          <a href="https://xr.studentorg.berkeley.edu">
+            <img src="/partners/berkeley.png" className="object-contain pb-4" />
           </a>
-          <a
-            href="https://www.linkedin.com/company/stanfordxr/"
-            className="pl-8"
-          >
-            <img src="/graphics/linkedin.svg" className="h-9" />
+          <a href="https://unity.com">
+            <img src="/partners/unity.png" className="object-contain" />
           </a>
         </div>
       </div>
