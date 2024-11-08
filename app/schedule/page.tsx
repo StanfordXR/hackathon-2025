@@ -150,6 +150,12 @@ export default function Home() {
             Hacking Ends
             <br />
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span className={`font-semibold`}>10:00 pm - 12:00 pm</span>
+              <span>Huang Basement</span>
+            </div>
+            Judging
+            <br />
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span className={`font-semibold`}>12:00 pm - 1:00 pm</span>
               <span>Huang Basement</span>
             </div>
@@ -169,6 +175,12 @@ export default function Home() {
             <br />
           </div>
         </div>
+      </div>
+      <div className="w-screen flex items-center justify-center mb-[150px]">
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=10q6-VYeUuNuB194LLNJciYC0aJtaV10&ehbc=2E312F"
+          className="w-full h-[500px] p-[20px] max-w-[800px]"
+        ></iframe>
       </div>
     </main>
   );
