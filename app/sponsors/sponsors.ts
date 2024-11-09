@@ -43,10 +43,6 @@ export const sponsors: SponsorTier[] = [
         name: "NVIDIA",
         imgsrc: "/sponsors/nvidia.png",
       },
-      {
-        name: "Gabb",
-        imgsrc: "/sponsors/gabb.png",
-      },
     ],
   },
   {
