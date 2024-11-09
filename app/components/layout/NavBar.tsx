@@ -39,10 +39,10 @@ export default function NavBar() {
               </li>
               <li>
                 <Link
-                  href="/faq"
+                  href="/tracks"
                   className="underline underline-offset-2 block rounded text-white p-0"
                 >
-                  FAQ
+                  Tracks
                 </Link>
               </li>
             </ul>
