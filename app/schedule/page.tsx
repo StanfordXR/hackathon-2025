@@ -95,7 +95,7 @@ export default function Home() {
             <br />
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span className={`font-semibold`}>7:00 pm - 8:15 pm</span>
-              <span>Huang Basement</span>
+              <span>Hewlett 200</span>
             </div>
             Opening Ceremony
             <br />
@@ -163,7 +163,7 @@ export default function Home() {
             <br />
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span className={`font-semibold`}>2:00 pm - 3:00 pm</span>
-              <span>Hewlett</span>
+              <span>Hewlett 200</span>
             </div>
             Closing Ceremony
             <br />
