@@ -19,7 +19,7 @@ export default function Home() {
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>10:00 am - 7:00 pm</span>
+              <span className={`font-semibold`}>Time TBD</span>
               <span>Huang Foyer</span>
             </div>
             Check-In & Claim Merch
@@ -27,90 +27,16 @@ export default function Home() {
             <br />
             <span className={`font-medium text-[30px]`}>Workshops</span>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>12:00 pm - 1:00 pm</span>
-              <span>Mackenzie</span>
+              <span className={`font-semibold`}>Time TBD</span>
+              <span>Location TBD</span>
             </div>
-            Unity "Beginner" Workshop
+            Workshops TBD
             <br />
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>1:15 pm - 2:15 pm</span>
-              <span>Mackenzie</span>
+              <span className={`font-semibold`}>TBD</span>
+              <span>TBD</span>
             </div>
-            Ramen VR Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>1:15 pm - 2:15 pm</span>
-              <span>Rotunda at WuTsai</span>
-            </div>
-            Unity + Design Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>2:30 pm - 3:30 pm</span>
-              <span>Mackenzie</span>
-            </div>
-            Amazon Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>2:30 pm - 3:30 pm</span>
-              <span>Rotunda at WuTsai</span>
-            </div>
-            Unity + VR Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>2:30 pm - 3:30 pm</span>
-              <span>Seminar Room at WuTsai</span>
-            </div>
-            Unity + AR Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>3:45 pm - 4:45 pm</span>
-              <span>Mackenzie</span>
-            </div>
-            Snapchat Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>3:45 pm - 4:45 pm</span>
-              <span>Rotunda at WuTsai</span>
-            </div>
-            ShapesXR Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>5:00 pm - 6:00 pm</span>
-              <span>Mackenzie</span>
-            </div>
-            Meta Workshop
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>5:00 pm - 6:00 pm</span>
-              <span>Rotunda at WuTsai</span>
-            </div>
-            Nvidia Workshop
-            <br />
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>6:00 pm - 7:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Dinner
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>7:00 pm - 8:15 pm</span>
-              <span>Hewlett 200</span>
-            </div>
-            Opening Ceremony
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>8:15 pm - 9:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Team Formation
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>9:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Hackathon Officially Starts
-            <br />
+            TBD
           </div>
 
           <div className={`text-white font-orbitron text-3xl mt-[70px]`}>
@@ -119,23 +45,10 @@ export default function Home() {
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>All day</span>
-              <span>Huang Basement</span>
+              <span className={`font-semibold`}>Time TBD</span>
+              <span>Location TBD</span>
             </div>
-            Hacking
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>10:00 am - 12:15 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Brunch
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>6:00 pm - 8:15 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Dinner
-            <br />
+            TBD
           </div>
 
           <div className={`text-white font-orbitron text-3xl mt-[70px]`}>
@@ -144,35 +57,10 @@ export default function Home() {
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>9:00 am</span>
-              <span>Huang Basement</span>
+              <span className={`font-semibold`}>Time TBD</span>
+              <span>Location TBD</span>
             </div>
-            Hacking Ends
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>10:00 pm - 12:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Judging
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>12:00 pm - 1:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Lunch
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>2:00 pm - 3:00 pm</span>
-              <span>Hewlett 200</span>
-            </div>
-            Closing Ceremony
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>3:00 pm - 5:00 pm</span>
-              <span>Huang Basement</span>
-            </div>
-            Expo / Recruitment / Networking
-            <br />
+            TBD
           </div>
         </div>
       </div>
