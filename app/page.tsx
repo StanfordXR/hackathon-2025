@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex flex-col top-0 left-0 w-screen h-screen bg-transparent">
         <div className="grow-0 md:h-[46%] h-[50%]"></div>
         <div className="grow-0 font-ptsans font-bold md:text-2xl text-base text-white flex items-center justify-center">
-          November 8-10 • Stanford, CA
+          November 14-16 • Stanford, CA
         </div>
         <div className="grow-0 my-5 flex flex-col md:flex-row items-center justify-center">
           <a
