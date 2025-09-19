@@ -20,22 +20,11 @@ export default function Home() {
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span className={`font-semibold`}>
-                Spectacles x Immerse the Bay Challenge
+                TBD
               </span>
-              <span>Snap AR</span>
+              <span>TBD</span>
             </div>
-            Snapchat Platform
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>Meta</span>
-            </div>
-            Meta Platform
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>Niantic</span>
-            </div>
-            Niantic Platform
-            <br />
+            TBD
             <br />
           </div>
           <div className={`text-white font-orbitron text-3xl`}>
@@ -45,43 +34,15 @@ export default function Home() {
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span className={`font-semibold`}>
-                XR Game Jam: “Forgotten Worlds”
+                TBD
               </span>
-              <span>Ramen VR</span>
+              <span>TBD</span>
             </div>
-            Create immersive XR gaming experiences around lost civilizations,
-            hidden dimensions, or virtual worlds tucked away in memory.
-            <br />
-            Bonus points if you:
-            <br />
-            - Integrate generative AI into the gameplay in a significant
-            capacity. Example: Using LLMs to add depth through real-time NPC
-            dialogue or lore
-            <br />- Include well thought out multiplayer integration.
+            TBD
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>AWS</span>
+              <span>TBD</span>
             </div>
-            Best in AWS
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>NVIDIA</span>
-            </div>
-            Best hack with NVIDIA omniverse.
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>AI Horizons</span>
-            </div>
-            Best Use of AI in XR
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>Virtuous Reality</span>
-            </div>
-            Best of Social Good
-            <br />
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>Art Beyond Reality</span>
-            </div>
-            Best of Creative/Artistic XR
+            TBD
             <br />
           </div>
           <div
