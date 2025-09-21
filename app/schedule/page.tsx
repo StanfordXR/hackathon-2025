@@ -43,7 +43,7 @@ export default function Home() {
       </div>
       <div className="w-screen flex items-center justify-center mb-[150px]">
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=10q6-VYeUuNuB194LLNJciYC0aJtaV10&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1hZjPNAJlb6pjj6Pv3k7QS266TOli61s&ehbc=2E312F&noprof=1"
           className="w-full h-[500px] p-[20px] max-w-[800px]"
         ></iframe>
       </div>

@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex flex-col top-0 left-0 w-screen h-screen bg-transparent">
         <div className="grow-0 md:h-[46%] h-[50%]"></div>
         <div className="grow-0 font-ptsans font-bold md:text-2xl text-base text-white flex items-center justify-center">
-          November 14-16 • Stanford, CA
+          November 14-16, 2025 • Stanford, CA
         </div>
         <div className="grow-0 my-5 flex flex-col md:flex-row items-center justify-center">
           <a
@@ -29,7 +29,7 @@ export default function Home() {
             Apply
           </a>
           <a
-            href={"https://forms.gle/iyxK1cSUF1ND7H6G7"}
+            href={"https://form.typeform.com/to/DvzO2epI"}
             className="box-border font-ptsans font-semibold text-white text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 border-2 border-opacity-25 hover:border-opacity-40 border-white"
           >
             Volunteer
