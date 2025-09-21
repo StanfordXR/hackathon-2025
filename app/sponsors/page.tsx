@@ -13,9 +13,11 @@ export default function Home() {
       <div className="w-screen min-h-screen bg-immersive md:p-[200px] md:pt-[120px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
         {
           <div className="text-white font-orbitron text-3xl"> TBD </div>
-        /* {sponsors.map((tier, index) => (
+          /* This a temporarily removed sponsor tier display */
+          /* {sponsors.map((tier, index) => (
           <Tier tier={tier} key={index} />
-        ))} */}
+        ))} */
+        }
       </div>
     </main>
   );

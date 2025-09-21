@@ -29,14 +29,15 @@ export default function Home() {
             Apply
           </a>
           <a
-            href={"https://forms.gle/kiMMZrVfRVfHdaTg8"}
+            href={"https://forms.gle/iyxK1cSUF1ND7H6G7"}
             className="box-border font-ptsans font-semibold text-white text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 border-2 border-opacity-25 hover:border-opacity-40 border-white"
           >
             Volunteer
           </a>
         </div>
         <div className="grow flex"></div>
-        {/* <div
+        {/* This a temporarily removed horizontally scrolling sidebar */
+        /* <div
           className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col my-10`}
         >
           <div className="">Sponsored By</div>
