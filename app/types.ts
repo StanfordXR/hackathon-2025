@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
 
 export interface ScheduleItem {
+  day: string;
   time: string;
   location: string;
   url: string;
