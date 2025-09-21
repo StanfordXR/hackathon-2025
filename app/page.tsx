@@ -36,12 +36,12 @@ export default function Home() {
           </a>
         </div>
         <div className="grow flex"></div>
-        <div
+        {/* <div
           className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col my-10`}
         >
           <div className="">Sponsored By</div>
           <SponsorBar />
-        </div>
+        </div> */}
       </div>
       <div className="w-screen h-auto text-white flex justify-center items-center flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
         <img
@@ -66,8 +66,8 @@ export default function Home() {
       </div>
       <div className="w-screen flex items-center justify-center mb-[200px]">
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=10q6-VYeUuNuB194LLNJciYC0aJtaV10&ehbc=2E312F"
-          className="w-full h-[500px] p-[20px] max-w-[800px]"
+          src="https://www.google.com/maps/d/embed?mid=1hZjPNAJlb6pjj6Pv3k7QS266TOli61s&ehbc=2E312F&noprof=1"
+          className="w-full h-[500px] p-[20px] max-w-[1000px]"
         ></iframe>
       </div>
     </>
