@@ -23,13 +23,13 @@ export default function Home() {
         </div>
         <div className="grow-0 my-5 flex flex-col md:flex-row items-center justify-center">
           <a
-            href={""}
+            href={"https://form.typeform.com/to/DvzO2epI"}
             className="font-ptsans font-semibold text-black text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 bg-pink-blue hover:bg-pink-blue-hover"
           >
             Apply
           </a>
           <a
-            href={"https://form.typeform.com/to/DvzO2epI"}
+            href={"https://forms.gle/iyxK1cSUF1ND7H6G7"}
             className="box-border font-ptsans font-semibold text-white text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 border-2 border-opacity-25 hover:border-opacity-40 border-white"
           >
             Volunteer
