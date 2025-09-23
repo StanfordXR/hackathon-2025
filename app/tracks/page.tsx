@@ -49,7 +49,9 @@ export default function Home() {
           <div
             className={`mt-[100px] text-white underline font-ptsans text-2xl flex align-center justify-center`}
           >
-            <a href="/slides.pdf">See Immerse The Bay 2024's Sponsor Deck</a>
+            <a href="/slides.pdf">
+              See Immerse The Bay 2024's Tracks & Prizes Deck
+            </a>
           </div>
         </div>
       </div>
