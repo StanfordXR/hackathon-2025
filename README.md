@@ -1,6 +1,6 @@
 ## Environments
 
-Testing: [itb-2025-testing.vercel.app](itb-2025-testing.vercel.app)
+Testing: [itb-2025-testing.vercel.app](https://itb-2025-testing.vercel.app)
 
 Production: [immersethebay.stanfordxr.org](https://immersethebay.stanfordxr.org/)
 
