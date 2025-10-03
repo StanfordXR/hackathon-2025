@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         aldrich: ["var(--font-aldrich)"],
+        berkshire: ["var(--font-berkshire)"],
         orbitron: ["var(--font-orbitron)"],
         ptsans: ["var(--font-pt_sans)"],
       },

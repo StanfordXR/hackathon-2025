@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Berkshire_Swash } from "next/font/google";
 import {
   Orbitron,
   Aldrich,
@@ -24,6 +25,11 @@ const pt_sans = Kanit({
   weight: "400",
   variable: "--font-pt_sans",
 });
+const berkshire = Berkshire_Swash({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-berkshire",
+});
 
 export const metadata: Metadata = {
   title: "Immerse the Bay | Stanford",
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${orbitron.variable}  ${aldrich.variable} ${pt_sans.variable} antialiased bg-black`}
+        className={`${orbitron.variable} ${aldrich.variable} ${pt_sans.variable} ${berkshire.variable} antialiased bg-black`}
       >
         <NavBar />
         {children}
