@@ -28,7 +28,7 @@ body {
 
 @keyframes sparkleDown1 {
   0% {
-    transform: translateY(-10%) scale(1);
+    transform: translateY(-2vh) scale(1);
     opacity: 1;
   }
   100% {
@@ -39,7 +39,7 @@ body {
 
 @keyframes sparkleDown2 {
   0% {
-    transform: translateY(-5%) scale(0.8);
+    transform: translateY(-6vh) scale(0.8);
     opacity: 1;
   }
   100% {
@@ -50,7 +50,7 @@ body {
 
 @keyframes sparkleDown3 {
   0% {
-    transform: translateY(-15%) scale(1.2);
+    transform: translateY(-10vh) scale(1.2);
     opacity: 1;
   }
   100% {
@@ -62,10 +62,14 @@ body {
 /* Longer animation durations for floating effect */
 .animate-sparkle1 {
   animation: sparkleDown1 20s linear infinite;
+  /* apply the 0% keyframe during animation-delay so particles stay off-screen while waiting */
+  animation-fill-mode: both;
 }
 .animate-sparkle2 {
   animation: sparkleDown2 25s linear infinite;
+  animation-fill-mode: both;
 }
 .animate-sparkle3 {
   animation: sparkleDown3 30s linear infinite;
+  animation-fill-mode: both;
 }
