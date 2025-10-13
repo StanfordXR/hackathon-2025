@@ -11,16 +11,27 @@ export const sponsors: SponsorTier[] = [
 	{
 		tier: "Platinum",
 		style: { color: "platinum", textShadow: "0px 0px 5px #fff" },
-		sponsors: [],
+		sponsors: [
+			{ name: "ByteDance", imgsrc: "/sponsors/ByteDance.png" },
+			{ name: "OpenBCI", imgsrc: "/sponsors/OpenBCI.png" },
+		],
 	},
 	{
 		tier: "Gold",
 		style: { color: "gold" },
-		sponsors: [],
+		sponsors: [
+			{ name: "AWE", imgsrc: "/sponsors/awe.svg" },
+		],
 	},
 	{
 		tier: "Silver",
 		style: { color: "silver" },
-		sponsors: [],
+			sponsors: [
+				{ name: "Raven Resonance", imgsrc: "/sponsors/Raven.png" },
+				{ name: "Afference", imgsrc: "/sponsors/Afference.png" },
+				{ name: "XREAL", imgsrc: "/sponsors/XREAL.png" },
+				{ name: "Meshy AI", imgsrc: "/sponsors/Meshy.png" },
+				{ name: "Shapes XR", imgsrc: "/sponsors/shapesxr.svg" },
+			],
 	},
 ];

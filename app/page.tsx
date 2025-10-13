@@ -82,13 +82,12 @@ export default function Home() {
           </a>
         </div>
         <div className="grow flex"></div>
-        {/* This a temporarily removed horizontally scrolling sidebar */
-        /* <div
+        <div
           className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col my-10`}
         >
           <div className="">Sponsored By</div>
           <SponsorBar />
-        </div> */}
+        </div>
       </div>
       <div className="w-screen h-auto text-white flex justify-center items-center flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
         <img
