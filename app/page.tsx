@@ -25,22 +25,25 @@ export default function Home() {
 
       {/* Wonderland Sparkles */}
       <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
-        {Array.from({ length: 40 }).map((_, i) => {
-          const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300"];
+        {Array.from({ length: 30 }).map((_, i) => {
+          const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
           const color = colors[i % colors.length];
-          const size = 6 + Math.random() * 10; // 6–16px, same for width/height
+          const size = 0.3 + Math.random() * 1.2; // 0.3–1.5vw, scales with screen
+          const animationIndex = (i % 3) + 1;
+          // Distribute particles evenly across the animation timeline
+          const staggeredDelay = (i / 60) * 25; // Spread across 25s
+          const randomOffset = Math.random() * 3; // Add small random variation
 
           return (
             <div
               key={i}
-              className={`absolute rounded-full ${color} animate-sparkle${
-                (i % 3) + 1
-              }`}
+              className={`absolute rounded-full ${color} blur-sm animate-sparkle${animationIndex}`}
               style={{
                 left: `${Math.random() * 100}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                animationDelay: `${Math.random() * 20}s`,
+                width: `${size}vw`,
+                height: `${size}vw`,
+                animationDelay: `${staggeredDelay + randomOffset}s`,
+                opacity: 0.3 + Math.random() * 0.6,
               }}
             ></div>
           );

@@ -28,7 +28,7 @@ body {
 
 @keyframes sparkleDown1 {
   0% {
-    transform: translateY(-2vh) scale(1);
+    transform: translateY(-5vh) scale(1);
     opacity: 1;
   }
   100% {
@@ -39,7 +39,7 @@ body {
 
 @keyframes sparkleDown2 {
   0% {
-    transform: translateY(-6vh) scale(0.8);
+    transform: translateY(-10vh) scale(0.8);
     opacity: 1;
   }
   100% {
@@ -50,7 +50,7 @@ body {
 
 @keyframes sparkleDown3 {
   0% {
-    transform: translateY(-10vh) scale(1.2);
+    transform: translateY(-15vh) scale(1.2);
     opacity: 1;
   }
   100% {
