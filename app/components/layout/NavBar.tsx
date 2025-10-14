@@ -8,7 +8,7 @@ export default function NavBar() {
       className={`fixed top-0 right-0 left-0 z-[13] flex items-start justify-center backdrop-filter`}
     >
       <nav
-        className={`bg-[rgb(0,0,0,0.9)] m-2 max-w-[1200px] w-[100%] rounded-[40px] border-white border-opacity-25 border`}
+        className={`bg-[rgb(0,0,0,0.9)] m-2 max-w-[1200px] w-[100%] rounded-[40px] border-white border-opacity-25 border shadow-[0_0_25px_rgba(200,150,255,0.6)]`}
       >
         <div className="flex flex-wrap items-center justify-center md:justify-between mx-auto p-4 px-8 gap-[12px]">
           <div className={`md:mr-[95px] mr-[12px] h-full`}>

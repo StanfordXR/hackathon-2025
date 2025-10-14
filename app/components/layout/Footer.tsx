@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="w-full bg-black font-medium flex items-start justify-between mx-auto p-10 md:p-14 text-white font-ptsans border-t border-white border-opacity-25">
+    <div className="w-full bg-black font-medium flex items-center justify-between mx-auto p-10 md:p-14 text-white font-ptsans border-t border-white border-opacity-25">
       <div className="text-[12px] md:text-[16px] items-start flex flex-col">
         <p className="p-1 pb-4">In partnership with</p>
         <div className={"flex items-start align-center flex-col w-[130px]"}>
           <a href="https://xr.studentorg.berkeley.edu">
-            <img src="/partners/berkeley.png" className="object-contain pb-4" />
-          </a>
-          <a href="https://unity.com">
-            <img src="/partners/unity.png" className="object-contain" />
+            <img src="/partners/berkeley.png" className="object-contain" />
           </a>
         </div>
+      </div>
+      <div className="flex items-center justify-center text-[9px] md:text-[10px] text-white/40">
+        Built with ❤️ using Next.js & Tailwind by Victor Chen, Jolie Li, and Ryan Hayashi
       </div>
       <div className="text-[12px] md:text-[16px] items-end flex flex-col">
         <Link href="/" className="flex items-center space-x-3 p-1">

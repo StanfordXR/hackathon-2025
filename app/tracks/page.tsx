@@ -12,7 +12,7 @@ export default function Home() {
         <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
           Tracks
         </div>
-        <div className="text-white font-orbitron text-3xl mt-24 p-32">TBD</div>
+        <div className="text-white font-orbitron text-3xl mt-24 p-32">Releasing November 14 • 9 PM PT</div>
 
         <div className={`w-[80%] mx-10 h-full`}>
           {/* This a temporarily removed Tracks display

@@ -25,48 +25,51 @@ export default function Home() {
 
       {/* Wonderland Sparkles */}
       <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
-        {Array.from({ length: 40 }).map((_, i) => {
-          const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300"];
+        {Array.from({ length: 30 }).map((_, i) => {
+          const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
           const color = colors[i % colors.length];
-          const size = 6 + Math.random() * 10; // 6–16px, same for width/height
+          const size = 0.3 + Math.random() * 1.2; // 0.3–1.5vw, scales with screen
+          const animationIndex = (i % 3) + 1;
+          // Distribute particles evenly across the animation timeline
+          const staggeredDelay = (i / 60) * 25; // Spread across 25s
+          const randomOffset = Math.random() * 3; // Add small random variation
 
           return (
             <div
               key={i}
-              className={`absolute rounded-full ${color} animate-sparkle${
-                (i % 3) + 1
-              }`}
+              className={`absolute rounded-full ${color} blur-sm animate-sparkle${animationIndex}`}
               style={{
                 left: `${Math.random() * 100}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                animationDelay: `${Math.random() * 20}s`,
+                width: `${size}vw`,
+                height: `${size}vw`,
+                animationDelay: `${staggeredDelay + randomOffset}s`,
+                opacity: 0.3 + Math.random() * 0.6,
               }}
             ></div>
           );
         })}
       </div>
 
-      <div className="flex flex-col top-0 left-0 w-screen h-screen bg-transparent">
-        <div className="grow-0 md:h-[40%] h-[40%]"></div>
+      <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent">
+        <div className="grow-0 md:h-[30%] h-[30%]"></div>
         <div className="grow-0 flex flex-col items-center justify-center text-center text-white">
           <div
-            className="font-berkshire text-6xl md:text-8xl mb-4 text-white 
-          drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)]"
+            className="font-berkshire text-6xl md:text-9xl mb-8 text-white 
+          animate-[glowPulse_3s_ease-in-out_infinite]"
           >
             Immerse The Bay
           </div>
-          <div className="font-ptsans italic text-2xl md:text-3xl opacity-90">
+          <div className="font-ptsans italic text-2xl md:text-3xl mb-8 opacity-90 drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)]">
             Beyond reality, down the rabbit hole.
           </div>
         </div>
-        <div className="grow-0 font-ptsans font-bold md:text-2xl text-base text-white flex items-center justify-center">
+        <div className="grow-0 font-ptsans font-bold md:text-2xl mb-4 text-base text-white flex items-center justify-center drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)]">
           November 14-16, 2025 • Stanford, CA
         </div>
         <div className="grow-0 my-5 flex flex-col md:flex-row items-center justify-center">
           <a
             href={"https://form.typeform.com/to/DvzO2epI"}
-            className="font-ptsans font-semibold text-white text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 
+            className="font-ptsans font-semibold text-white text-md px-8 sm:px-[60px] rounded-[100px] mx-2 sm:mx-4 py-3 m-2 
             bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
             shadow-[0_0_20px_rgba(200,150,255,0.6)] hover:shadow-[0_0_30px_rgba(255,200,255,0.9)] transition-all duration-300"
           >
@@ -74,7 +77,7 @@ export default function Home() {
           </a>
           <a
             href={"https://forms.gle/iyxK1cSUF1ND7H6G7"}
-            className="font-ptsans font-semibold text-white text-md px-[60px] rounded-[100px] mx-4 py-3 m-2 
+            className="font-ptsans font-semibold text-white text-md px-8 sm:px-[60px] rounded-[100px] mx-2 sm:mx-4 py-3 m-2 
             bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
             shadow-[0_0_20px_rgba(200,150,255,0.6)] hover:shadow-[0_0_30px_rgba(255,200,255,0.9)] transition-all duration-300"
           >
@@ -82,23 +85,22 @@ export default function Home() {
           </a>
         </div>
         <div className="grow flex"></div>
-        {/* This a temporarily removed horizontally scrolling sidebar */
-        /* <div
+        <div
           className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col my-10`}
         >
-          <div className="">Sponsored By</div>
+          <div className="font-ptsans drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)]">Sponsored By</div>
           <SponsorBar />
-        </div> */}
+        </div>
       </div>
-      <div className="w-screen h-auto text-white flex justify-center items-center flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
+      <div className="w-full h-auto text-white flex justify-center items-stretch flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
         <img
           src="/graphics/past.jpg"
-          className="max-h-[350px] object-contain	m-1 md:mr-8 mt-10 md:mt-1 md:mb-0 mb-10 rounded-[50px]"
+          className="h-auto md:h-[350px] object-contain	md:mr-8 mt-10 md:mt-0 md:mb-0 mb-10 rounded-[50px]"
         ></img>
         <div
-          className="w-full max-w-[600px] h-auto rounded-[30px] p-[25px] 
+          className="w-full max-w-[600px] h-auto md:h-[350px] rounded-[30px] p-4 sm:p-[25px] mx-4 
         bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
-        shadow-[0_0_25px_rgba(200,150,255,0.6)]"
+        shadow-[0_0_25px_rgba(200,150,255,0.6)] flex flex-col justify-center"
         >
           <div className="font-orbitron text-2xl mb-4">
             What is Immerse the Bay?
@@ -115,7 +117,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-screen flex items-center justify-center mb-[200px]">
+      <div className="w-full flex items-center justify-center mb-[200px] px-4">
         <div
           className="w-full max-w-[1000px] p-[5px] rounded-[30px] 
           bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
@@ -123,7 +125,7 @@ export default function Home() {
         >
           <iframe
             src="https://www.google.com/maps/d/embed?mid=1hZjPNAJlb6pjj6Pv3k7QS266TOli61s&ehbc=2E312F&noprof=1"
-            className="w-full h-[500px] rounded-[25px] border-0"
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-[25px] border-0"
           ></iframe>
         </div>
       </div>

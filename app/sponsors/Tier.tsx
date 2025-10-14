@@ -11,7 +11,7 @@ export default function Tier({ tier }: { tier: SponsorTier }) {
       </div>
       <div className="flex w-full h-full p-0 m-0 flex-wrap justify-center items-center">
         {tier.sponsors.map((sponsor, index) => (
-          <div className="h-[50px] mx-[50px] my-[20px] p-1" key={index}>
+          <div className="h-[50px] mx-[50px] mb-[30px] p-1" key={index}>
             <img
               src={sponsor.imgsrc}
               alt={sponsor.name}
