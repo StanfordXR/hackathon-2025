@@ -92,15 +92,15 @@ export default function Home() {
           <SponsorBar />
         </div>
       </div>
-      <div className="w-full h-auto text-white flex justify-center items-center flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
+      <div className="w-full h-auto text-white flex justify-center items-stretch flex-col md:flex-row p-[20px] mt-[150px] mb-[200px]">
         <img
           src="/graphics/past.jpg"
-          className="max-h-[350px] object-contain	m-1 md:mr-8 mt-10 md:mt-1 md:mb-0 mb-10 rounded-[50px]"
+          className="h-auto md:h-[350px] object-contain	md:mr-8 mt-10 md:mt-0 md:mb-0 mb-10 rounded-[50px]"
         ></img>
         <div
-          className="w-full max-w-[600px] h-auto rounded-[30px] p-4 sm:p-[25px] mx-4 
+          className="w-full max-w-[600px] h-auto md:h-[350px] rounded-[30px] p-4 sm:p-[25px] mx-4 
         bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
-        shadow-[0_0_25px_rgba(200,150,255,0.6)]"
+        shadow-[0_0_25px_rgba(200,150,255,0.6)] flex flex-col justify-center"
         >
           <div className="font-orbitron text-2xl mb-4">
             What is Immerse the Bay?
