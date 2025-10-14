@@ -14,7 +14,7 @@ export const sponsors: SponsorTier[] = [
 		sponsors: [
 			{ name: "ByteDance", imgsrc: "/sponsors/ByteDance.png" },
 			{ name: "OpenBCI", imgsrc: "/sponsors/OpenBCI.png" },
-			{ name: "Meta", imgsrc: "/sponsors/Meta.png" },
+			{ name: "Meta", imgsrc: "/sponsors/meta.png" },
 		],
 	},
 	{
