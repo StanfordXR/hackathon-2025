@@ -12,31 +12,58 @@ import SponsorBar from "./sponsors/SponsorBar";
 import CanvasWrapper from "./components/CanvasWrapper";
 
 export default function Home() {
-  // ===== PARALLAX CONFIGURATION =====
+  // ===== CONFIGURATION =====
   const TRANSITION_START_PERCENT = 0.2;  // Start transition at (% of page scroll)
   const TRANSITION_END_PERCENT = 0.6;    // End transition at (% of page scroll)
   const MAX_SPEED = 20;                  // Maximum parallax speed multiplier (at peak)
   const TWEEN_EXPONENT = 3;              // Curve steepness (higher = longer slow tail, sharper acceleration)
   const BASE_SPEED = 0.3;                // Default slow parallax speed
   const MAX_BG_OFFSET = 2.2;             // Maximum background offset in viewport heights
+  const PARTICLE_OPACITY_MIN = 0.3;     // Minimum particle opacity
+  const PARTICLE_OPACITY_MAX = 0.8;     // Maximum particle opacity
+  const PARTICLE_DURATION_MIN = 15;      // Minimum particle fall duration (seconds)
+  const PARTICLE_DURATION_MAX = 30;      // Maximum particle fall duration (seconds)
+  const PARTICLE_DELAY_STAGGER = 0.3;    // Delay between each particle start (seconds)
+  const PARTICLE_DELAY_RANDOM = 3;       // Random delay variation (seconds)
   // ==================================
 
   const [isMobile, setIsMobile] = useState(false);
   const [bgOffset, setBgOffset] = useState(0);
+  const [scrollPercent, setScrollPercent] = useState(0);
   const immerseBayRef = useRef<HTMLDivElement>(null);
 
   // Memoize particle properties to prevent jitter on scroll
   const particles = React.useMemo(() => {
-    const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
+    // RGB values for day colors (soft pastels)
+    const dayColors = [
+      { r: 249, g: 168, b: 212 }, // pink-300
+      { r: 216, g: 180, b: 254 }, // purple-300
+      { r: 147, g: 197, b: 253 }, // blue-300
+      { r: 240, g: 171, b: 252 }, // fuchsia-300
+      { r: 196, g: 181, b: 253 }, // violet-300
+    ];
+    // RGB values for neon colors (bright)
+    const neonColors = [
+      { r: 34, g: 211, b: 238 },  // cyan-400
+      { r: 163, g: 230, b: 53 },  // lime-400
+      { r: 250, g: 204, b: 21 },  // yellow-400
+      { r: 244, g: 114, b: 182 }, // pink-500
+      { r: 168, g: 85, b: 247 },  // purple-500
+    ];
     return Array.from({ length: 18 }).map((_, i) => ({
-      color: colors[i % colors.length],
+      dayColor: dayColors[i % dayColors.length],
+      neonColor: neonColors[i % neonColors.length],
       size: isMobile ? 1 + Math.random() * 2 : 0.5 + Math.random() * 1.5,
-      duration: 20 + Math.random() * 10,
-      animationDelay: (i / 18) * 10 + Math.random() * 5,
-      opacity: 0.15 + Math.random() * 0.6,
+      duration: PARTICLE_DURATION_MIN + Math.random() * (PARTICLE_DURATION_MAX - PARTICLE_DURATION_MIN),
+      animationDelay: (i * PARTICLE_DELAY_STAGGER) + Math.random() * PARTICLE_DELAY_RANDOM,
+      opacity: PARTICLE_OPACITY_MIN + Math.random() * (PARTICLE_OPACITY_MAX - PARTICLE_OPACITY_MIN),
       left: Math.random() * 100,
     }));
   }, [isMobile]);
+
+  // Determine if we're past transition midpoint
+  const transitionMidpoint = (TRANSITION_START_PERCENT + TRANSITION_END_PERCENT) / 2;
+  const useNeonColors = scrollPercent >= transitionMidpoint;
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -59,15 +86,16 @@ export default function Home() {
 
       // Calculate total scrollable height
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = totalHeight > 0 ? scroll / totalHeight : 0;
+      const currentScrollPercent = totalHeight > 0 ? scroll / totalHeight : 0;
+      setScrollPercent(currentScrollPercent);
 
       // Calculate parallax speed based on scroll percentage
       let speed = BASE_SPEED; // Default slow speed
 
       // Transition zone defined by percentage of page scroll
-      if (scrollPercent >= TRANSITION_START_PERCENT && scrollPercent <= TRANSITION_END_PERCENT) {
+      if (currentScrollPercent >= TRANSITION_START_PERCENT && currentScrollPercent <= TRANSITION_END_PERCENT) {
         // Progress through transition zone (0 to 1)
-        const prog = (scrollPercent - TRANSITION_START_PERCENT) / (TRANSITION_END_PERCENT - TRANSITION_START_PERCENT);
+        const prog = (currentScrollPercent - TRANSITION_START_PERCENT) / (TRANSITION_END_PERCENT - TRANSITION_START_PERCENT);
         
         // Map to speed: peaks at 0.5 (middle)
         // Create bell curve: 0 at edges, 1 at middle
@@ -144,20 +172,25 @@ export default function Home() {
 
       {/* Wonderland Sparkles */}
       <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
-        {particles.map((particle, i) => (
-          <div
-            key={i}
-            className={`absolute rounded-full ${particle.color} blur-sm animate-sparkle`}
-            style={{
-              left: `${particle.left}%`,
-              width: `${particle.size}vw`,
-              height: `${particle.size}vw`,
-              animationDuration: `${particle.duration}s`,
-              animationDelay: `${particle.animationDelay}s`,
-              opacity: particle.opacity,
-            }}
-          ></div>
-        ))}
+        {particles.map((particle, i) => {
+          const currentColor = useNeonColors ? particle.neonColor : particle.dayColor;
+          const bgColor = `rgba(${currentColor.r}, ${currentColor.g}, ${currentColor.b}, ${particle.opacity})`;
+          return (
+            <div
+              key={i}
+              className="absolute rounded-full blur-sm animate-sparkle"
+              style={{
+                left: `${particle.left}%`,
+                width: `${particle.size}vw`,
+                height: `${particle.size}vw`,
+                animationDuration: `${particle.duration}s`,
+                animationDelay: `${particle.animationDelay}s`,
+                backgroundColor: bgColor,
+                transition: 'background-color 500ms',
+              }}
+            ></div>
+          );
+        })}
       </div>
 
       <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent">
