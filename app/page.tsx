@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 import { Color, Mesh, UniformsLib, UniformsUtils } from "three";
 
 import { Canvas, Vector3, useFrame } from "@react-three/fiber";
@@ -10,6 +12,15 @@ import SponsorBar from "./sponsors/SponsorBar";
 import CanvasWrapper from "./components/CanvasWrapper";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <div
@@ -28,7 +39,8 @@ export default function Home() {
         {Array.from({ length: 30 }).map((_, i) => {
           const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
           const color = colors[i % colors.length];
-          const size = 0.3 + Math.random() * 1.2; // 0.3–1.5vw, scales with screen
+          // Larger base size for mobile visibility: 1–3vw on mobile, 0.5–2vw on desktop
+          const size = isMobile ? 1 + Math.random() * 2 : 0.5 + Math.random() * 1.5;
           const animationIndex = (i % 3) + 1;
           // Distribute particles evenly across the animation timeline
           const staggeredDelay = (i / 60) * 25; // Spread across 25s
@@ -43,7 +55,7 @@ export default function Home() {
                 width: `${size}vw`,
                 height: `${size}vw`,
                 animationDelay: `${staggeredDelay + randomOffset}s`,
-                opacity: 0.3 + Math.random() * 0.6,
+                opacity: 0.4 + Math.random() * 0.5,
               }}
             ></div>
           );
