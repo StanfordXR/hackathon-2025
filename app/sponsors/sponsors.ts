@@ -16,6 +16,7 @@ export const sponsors: SponsorTier[] = [
 			{ name: "ByteDance", imgsrc: "/sponsors/ByteDance.png", size: 105 },
 			{ name: "OpenBCI", imgsrc: "/sponsors/OpenBCI.png", size: 130 },
 			{ name: "Meta", imgsrc: "/sponsors/meta.png" },
+			{ name: "XR Bootcamp", imgsrc: "/sponsors/XR_Bootcamp.png", size: 160 },
 			// { name: "Snap AR", imgsrc: "/sponsors/SnapAR.png" },
 		],
 	},
