@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 import { Color, Mesh, UniformsLib, UniformsUtils } from "three";
 
 import { Canvas, Vector3, useFrame } from "@react-three/fiber";
@@ -10,14 +12,159 @@ import SponsorBar from "./sponsors/SponsorBar";
 import CanvasWrapper from "./components/CanvasWrapper";
 
 export default function Home() {
+  // ===== CONFIGURATION =====
+  const TRANSITION_START_PERCENT = 0.2;  // Start transition at (% of page scroll)
+  const TRANSITION_END_PERCENT = 0.6;    // End transition at (% of page scroll)
+  const MAX_SPEED = 20;                  // Maximum parallax speed multiplier (at peak)
+  const TWEEN_EXPONENT = 3;              // Curve steepness (higher = longer slow tail, sharper acceleration)
+  const BASE_SPEED = 0.3;                // Default slow parallax speed
+  const MAX_BG_OFFSET = 2.2;             // Maximum background offset in viewport heights
+  const PARTICLE_OPACITY_MIN = 0.3;     // Minimum particle opacity
+  const PARTICLE_OPACITY_MAX = 0.8;     // Maximum particle opacity
+  const PARTICLE_DURATION_MIN = 15;      // Minimum particle fall duration (seconds)
+  const PARTICLE_DURATION_MAX = 30;      // Maximum particle fall duration (seconds)
+  const PARTICLE_DELAY_STAGGER = 0.3;    // Delay between each particle start (seconds)
+  const PARTICLE_DELAY_RANDOM = 3;       // Random delay variation (seconds)
+  // ==================================
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [bgOffset, setBgOffset] = useState(0);
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const immerseBayRef = useRef<HTMLDivElement>(null);
+
+  // Memoize particle properties to prevent jitter on scroll
+  const particles = React.useMemo(() => {
+    // RGB values for day colors (soft pastels)
+    const dayColors = [
+      { r: 249, g: 168, b: 212 }, // pink-300
+      { r: 216, g: 180, b: 254 }, // purple-300
+      { r: 147, g: 197, b: 253 }, // blue-300
+      { r: 240, g: 171, b: 252 }, // fuchsia-300
+      { r: 196, g: 181, b: 253 }, // violet-300
+    ];
+    // RGB values for neon colors (bright)
+    const neonColors = [
+      { r: 34, g: 211, b: 238 },  // cyan-400
+      { r: 163, g: 230, b: 53 },  // lime-400
+      { r: 250, g: 204, b: 21 },  // yellow-400
+      { r: 244, g: 114, b: 182 }, // pink-500
+      { r: 168, g: 85, b: 247 },  // purple-500
+    ];
+    return Array.from({ length: 18 }).map((_, i) => ({
+      dayColor: dayColors[i % dayColors.length],
+      neonColor: neonColors[i % neonColors.length],
+      size: isMobile ? 1 + Math.random() * 2 : 0.5 + Math.random() * 1.5,
+      duration: PARTICLE_DURATION_MIN + Math.random() * (PARTICLE_DURATION_MAX - PARTICLE_DURATION_MIN),
+      animationDelay: (i * PARTICLE_DELAY_STAGGER) + Math.random() * PARTICLE_DELAY_RANDOM,
+      opacity: PARTICLE_OPACITY_MIN + Math.random() * (PARTICLE_OPACITY_MAX - PARTICLE_OPACITY_MIN),
+      left: Math.random() * 100,
+    }));
+  }, [isMobile]);
+
+  // Determine if we're past transition midpoint
+  const transitionMidpoint = (TRANSITION_START_PERCENT + TRANSITION_END_PERCENT) / 2;
+  const useNeonColors = scrollPercent >= transitionMidpoint;
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    let accumulatedOffset = 0;
+    let lastScroll = 0;
+    const screenHeight = window.innerHeight;
+    const minOffset = 0; // Don't scroll past day banner
+    const maxOffset = screenHeight * MAX_BG_OFFSET; // Stop at end of night banner
+
+    const onScroll = () => {
+      const scroll = window.scrollY;
+      const delta = scroll - lastScroll;
+      lastScroll = scroll;
+
+      // Calculate total scrollable height
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScrollPercent = totalHeight > 0 ? scroll / totalHeight : 0;
+      setScrollPercent(currentScrollPercent);
+
+      // Calculate parallax speed based on scroll percentage
+      let speed = BASE_SPEED; // Default slow speed
+
+      // Transition zone defined by percentage of page scroll
+      if (currentScrollPercent >= TRANSITION_START_PERCENT && currentScrollPercent <= TRANSITION_END_PERCENT) {
+        // Progress through transition zone (0 to 1)
+        const prog = (currentScrollPercent - TRANSITION_START_PERCENT) / (TRANSITION_END_PERCENT - TRANSITION_START_PERCENT);
+        
+        // Map to speed: peaks at 0.5 (middle)
+        // Create bell curve: 0 at edges, 1 at middle
+        const bellCurve = 1 - Math.pow(2 * prog - 1, 2); // Parabola: 0 at 0 and 1, peaks at 0.5
+        
+        // Apply tween exponent for curve steepness
+        const tweenedBell = Math.pow(bellCurve, TWEEN_EXPONENT);
+        
+        speed = BASE_SPEED + (tweenedBell * MAX_SPEED);
+      }
+
+      accumulatedOffset += delta * speed;
+      // Clamp offset to valid range
+      accumulatedOffset = Math.max(minOffset, Math.min(accumulatedOffset, maxOffset));
+      setBgOffset(accumulatedOffset);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
+      {/* Vertical Background Strip: Day → Black → Night */}
       <div
-        className="w-[100%] h-[100%] fixed z-[-3] bg-cover bg-center"
+        className="w-full fixed left-0 z-[-5]"
         style={{
-          backgroundImage: "url('/graphics/StanfordXR2025Hackathon.png')",
+          height: '320vh', // 3.2 screens tall (110% + 100% + 110%)
+          top: 0,
+          transform: `translateY(${-bgOffset}px)`,
         }}
-      ></div>
+      >
+        {/* Day section - 110vh with bottom fade to black */}
+        <div
+          className="w-full relative"
+          style={{
+            height: '110vh',
+            backgroundImage: "url('/graphics/Day%20Banner.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#000",
+            maskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+          }}
+        />
+        
+        {/* Black section - full screen */}
+        <div
+          className="w-full bg-black"
+          style={{ height: '100vh' }}
+        />
+        
+        {/* Night section - 110vh with top fade from black */}
+        <div
+          className="w-full relative"
+          style={{
+            height: '110vh',
+            backgroundImage: "url('/graphics/Night%20Banner.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#000",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 100%)",
+          }}
+        />
+      </div>
+
       <div
         className="h-screen w-screen fixed z-[-2] pointer-events-none
       bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_60%,rgba(0,0,0,0.6)_100%)]"
@@ -25,25 +172,21 @@ export default function Home() {
 
       {/* Wonderland Sparkles */}
       <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
-          const color = colors[i % colors.length];
-          const size = 0.3 + Math.random() * 1.2; // 0.3–1.5vw, scales with screen
-          const animationIndex = (i % 3) + 1;
-          // Distribute particles evenly across the animation timeline
-          const staggeredDelay = (i / 60) * 25; // Spread across 25s
-          const randomOffset = Math.random() * 3; // Add small random variation
-
+        {particles.map((particle, i) => {
+          const currentColor = useNeonColors ? particle.neonColor : particle.dayColor;
+          const bgColor = `rgba(${currentColor.r}, ${currentColor.g}, ${currentColor.b}, ${particle.opacity})`;
           return (
             <div
               key={i}
-              className={`absolute rounded-full ${color} blur-sm animate-sparkle${animationIndex}`}
+              className="absolute rounded-full blur-sm animate-sparkle"
               style={{
-                left: `${Math.random() * 100}%`,
-                width: `${size}vw`,
-                height: `${size}vw`,
-                animationDelay: `${staggeredDelay + randomOffset}s`,
-                opacity: 0.3 + Math.random() * 0.6,
+                left: `${particle.left}%`,
+                width: `${particle.size}vw`,
+                height: `${particle.size}vw`,
+                animationDuration: `${particle.duration}s`,
+                animationDelay: `${particle.animationDelay}s`,
+                backgroundColor: bgColor,
+                transition: 'background-color 500ms',
               }}
             ></div>
           );
@@ -51,8 +194,8 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent">
-        <div className="grow-0 md:h-[30%] h-[30%]"></div>
-        <div className="grow-0 flex flex-col items-center justify-center text-center text-white">
+        <div className="grow-0 md:h-[30%] h-[35%]"></div>
+        <div className="grow-0 flex flex-col items-center justify-center text-center text-white px-4">
           <div
             className="font-berkshire text-6xl md:text-9xl mb-8 text-white 
           animate-[glowPulse_3s_ease-in-out_infinite]"
@@ -86,9 +229,9 @@ export default function Home() {
         </div>
         <div className="grow flex"></div>
         <div
-          className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col my-10`}
+          className={`grow-0 w-full px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col-reverse md:flex-col my-10`}
         >
-          <div className="font-ptsans drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)]">Sponsored By</div>
+          <div className="font-ptsans drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)] mt-4 md:mt-0">Sponsored By</div>
           <SponsorBar />
         </div>
       </div>
@@ -98,6 +241,7 @@ export default function Home() {
           className="h-auto md:h-[350px] object-contain	md:mr-8 mt-10 md:mt-0 md:mb-0 mb-10 rounded-[50px]"
         ></img>
         <div
+          ref={immerseBayRef}
           className="w-full max-w-[600px] h-auto md:h-[350px] rounded-[30px] p-4 sm:p-[25px] mx-4 
         bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
         shadow-[0_0_25px_rgba(200,150,255,0.6)] flex flex-col justify-center"
