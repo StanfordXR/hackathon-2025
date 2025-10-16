@@ -229,7 +229,7 @@ export default function Home() {
         </div>
         <div className="grow flex"></div>
         <div
-          className={`grow-0 w-full overflow-hidden px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col-reverse md:flex-col my-10`}
+          className={`grow-0 w-full px-4 font-ptsans font-bold text-base text-white flex items-center justify-center flex-col-reverse md:flex-col my-10`}
         >
           <div className="font-ptsans drop-shadow-[3px_3px_6px_rgba(0,0,0,0.8)] mt-4 md:mt-0">Sponsored By</div>
           <SponsorBar />
