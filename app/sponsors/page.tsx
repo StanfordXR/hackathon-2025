@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="main">
-      <div className="w-screen min-h-screen bg-immersive md:p-[200px] md:pt-[120px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
+      <div className="w-full min-h-screen bg-immersive md:p-[200px] md:pt-[120px] pt-[120px] pb-[60px] flex justify-center items-center flex-col">
         {sponsors.map((tier, index) => (
           <Tier tier={tier} key={index} />
         ))}

@@ -12,27 +12,28 @@ export const sponsors: SponsorTier[] = [
 		tier: "Platinum",
 		style: { color: "platinum", textShadow: "0px 0px 5px #fff" },
 		sponsors: [
-			{ name: "ByteDance", imgsrc: "/sponsors/ByteDance.png" },
-			{ name: "OpenBCI", imgsrc: "/sponsors/OpenBCI.png" },
+			{ name: "AWE", imgsrc: "/sponsors/awe.svg", size: 150 },
+			{ name: "ByteDance", imgsrc: "/sponsors/ByteDance.png", size: 105 },
+			{ name: "OpenBCI", imgsrc: "/sponsors/OpenBCI.png", size: 130 },
 			{ name: "Meta", imgsrc: "/sponsors/meta.png" },
+			// { name: "Snap AR", imgsrc: "/sponsors/SnapAR.png" },
 		],
 	},
 	{
 		tier: "Gold",
 		style: { color: "gold" },
 		sponsors: [
-			{ name: "AWE", imgsrc: "/sponsors/awe.svg" },
+			{ name: "Raven Resonance", imgsrc: "/sponsors/Raven.png" },
+			{ name: "Afference", imgsrc: "/sponsors/Afference.png" },
+			{ name: "XREAL", imgsrc: "/sponsors/XREAL.png" },
+			{ name: "Meshy AI", imgsrc: "/sponsors/Meshy.png", size: 115 },
 		],
 	},
 	{
 		tier: "Silver",
 		style: { color: "silver" },
-			sponsors: [
-				{ name: "Raven Resonance", imgsrc: "/sponsors/Raven.png" },
-				{ name: "Afference", imgsrc: "/sponsors/Afference.png" },
-				{ name: "XREAL", imgsrc: "/sponsors/XREAL.png" },
-				{ name: "Meshy AI", imgsrc: "/sponsors/Meshy.png" },
-				{ name: "Shapes XR", imgsrc: "/sponsors/shapesxr.svg" },
-			],
+		sponsors: [
+			{ name: "Shapes XR", imgsrc: "/sponsors/shapesxr.svg" },
+		],
 	},
 ];
