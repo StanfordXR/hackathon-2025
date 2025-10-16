@@ -36,26 +36,29 @@ export default function Home() {
 
       {/* Wonderland Sparkles */}
       <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
-        {Array.from({ length: 30 }).map((_, i) => {
+        {Array.from({ length: 18 }).map((_, i) => {
           const colors = ["bg-pink-300", "bg-purple-300", "bg-blue-300", "bg-fuchsia-300", "bg-violet-300"];
           const color = colors[i % colors.length];
           // Larger base size for mobile visibility: 1–3vw on mobile, 0.5–2vw on desktop
           const size = isMobile ? 1 + Math.random() * 2 : 0.5 + Math.random() * 1.5;
-          const animationIndex = (i % 3) + 1;
-          // Distribute particles evenly across the animation timeline
-          const staggeredDelay = (i / 60) * 25; // Spread across 25s
-          const randomOffset = Math.random() * 3; // Add small random variation
+          // Randomize duration for natural variation (20-30s)
+          const duration = 20 + Math.random() * 10;
+          // Stagger particle start times so they fall from top continuously
+          const animationDelay = (i / 18) * 10 + Math.random() * 5;
+          // Wide opacity variation: 0.15–0.75 range for depth and subtlety
+          const opacity = 0.15 + Math.random() * 0.6;
 
           return (
             <div
               key={i}
-              className={`absolute rounded-full ${color} blur-sm animate-sparkle${animationIndex}`}
+              className={`absolute rounded-full ${color} blur-sm animate-sparkle`}
               style={{
                 left: `${Math.random() * 100}%`,
                 width: `${size}vw`,
                 height: `${size}vw`,
-                animationDelay: `${staggeredDelay + randomOffset}s`,
-                opacity: 0.4 + Math.random() * 0.5,
+                animationDuration: `${duration}s`,
+                animationDelay: `${animationDelay}s`,
+                opacity: opacity,
               }}
             ></div>
           );
