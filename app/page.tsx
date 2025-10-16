@@ -63,8 +63,8 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent">
-        <div className="grow-0 md:h-[30%] h-[30%]"></div>
-        <div className="grow-0 flex flex-col items-center justify-center text-center text-white">
+        <div className="grow-0 md:h-[30%] h-[35%]"></div>
+        <div className="grow-0 flex flex-col items-center justify-center text-center text-white px-4">
           <div
             className="font-berkshire text-6xl md:text-9xl mb-8 text-white 
           animate-[glowPulse_3s_ease-in-out_infinite]"
