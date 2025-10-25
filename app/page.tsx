@@ -13,9 +13,9 @@ import CanvasWrapper from "./components/CanvasWrapper";
 
 export default function Home() {
   // ===== CONFIGURATION =====
-  const TRANSITION_START_PERCENT = 0.2;  // Start transition at (% of page scroll)
-  const TRANSITION_END_PERCENT = 0.6;    // End transition at (% of page scroll)
-  const MAX_SPEED = 20;                  // Maximum parallax speed multiplier (at peak)
+  const TRANSITION_START_PERCENT = 0.3;  // Start transition at (% of page scroll)
+  const TRANSITION_END_PERCENT = 0.65;    // End transition at (% of page scroll)
+  const MAX_SPEED = 10;                  // Maximum parallax speed multiplier (at peak)
   const TWEEN_EXPONENT = 3;              // Curve steepness (higher = longer slow tail, sharper acceleration)
   const BASE_SPEED = 0.3;                // Default slow parallax speed
   const MAX_BG_OFFSET = 2.2;             // Maximum background offset in viewport heights

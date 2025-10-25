@@ -15,7 +15,7 @@ export default function Tier({ tier }: { tier: SponsorTier }) {
           const scale = (sponsor.size || 100) / 100;
           const height = baseHeight * scale;
           return (
-            <div className="mx-[50px] mb-[30px] p-1" style={{ height: `${height}px` }} key={index}>
+            <div className="mx-[30px] mb-[30px] p-1" style={{ height: `${height}px` }} key={index}>
               <img
                 src={sponsor.imgsrc}
                 alt={sponsor.name}
