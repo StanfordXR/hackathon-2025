@@ -193,7 +193,7 @@ export default function Home() {
         })}
       </div>
 
-      <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent">
+      <div className="flex flex-col top-0 left-0 w-full h-screen bg-transparent pt-[200px] md:pt-[260px]">
         <div className="grow-0 md:h-[30%] h-[35%]"></div>
         <div className="grow-0 flex flex-col items-center justify-center text-center text-white px-4">
           <div
@@ -242,14 +242,15 @@ export default function Home() {
         ></img>
         <div
           ref={immerseBayRef}
-          className="w-full max-w-[600px] h-auto md:h-[350px] rounded-[30px] p-4 sm:p-[25px] mx-4 
-        bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
-        shadow-[0_0_25px_rgba(200,150,255,0.6)] flex flex-col justify-center"
+          className="w-full max-w-[600px] h-auto md:h-[350px] rounded-[30px] 
+          p-4 sm:p-[25px] mx-auto md:mx-4 
+          bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-blue-900/80 
+          shadow-[0_0_25px_rgba(200,150,255,0.6)] flex flex-col justify-center text-center md:text-left"
         >
           <div className="font-orbitron text-2xl mb-4">
             What is Immerse the Bay?
           </div>
-          <div className="font-ptsans text-lg">
+          <div className="font-ptsans text-base sm:text-lg leading-relaxed">
             Situated at the heart of Silicon Valley, Immerse The Bay stands as
             Stanford University's leading XR hackathon. We unite students,
             industry experts, tech enthusiasts, and visionaries from all corners
