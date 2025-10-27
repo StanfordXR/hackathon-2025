@@ -17,80 +17,65 @@ export default function Home() {
         <div className={`w-[80%] mx-10 h-full`}>
           <hr className={`shadow-glowing my-1 mb-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Is there a team size limit?
+            What is the latest I should arrive and the earliest I should leave?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            Yes, teams are limited to 4 people.
+            It is very important to arrive before the opening ceremony at 7pm on Friday, November 14. 
+            In addition, you give yourself enough time to check-in at the front desk, socialize to 
+            meet potential team members, and enjoy some dinner. 
+
+            Our closing ceremony ends at 3pm on Sunday, November 16. This is where we announce our 
+            winners, but if you absolutely have to leave earlier, judging ends at 12pm. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Do I need any prior XR experience?
+            Can I bring my own hardware to hack on?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            No prior experience is necessary! This hackathon welcomes all skill
-            levels. We will host "Intro to Unity," "Unity + VR," and "Unity +
-            AR" workshops, in collaboration with our wonderful partners at
-            Berkeley and Unity, on Friday, Nov 8th to help you get started.
+            All hardware equipment used must be provided by sponsors or consumer off-the-shelf 
+            devices (no hardware modifications). All teams using devices not included in the above 
+            category will only be eligible for the “Wild West” prize track. Final judgement on what 
+            hardware is allowed in the general tracks will be provided by the Immerse the Bay organizers. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Where can I find a team?
+            Can I come with a pre-determined hacking group?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            Immerse The Bay will host a team formation session on Friday, Nov
-            8th for participants without teams. <br /> <br />
-            You can also introduce yourself on our Immerse The Bay Discord,
-            where we have a dedicated channel for project ideas and team
-            formation. (All accepted applicants will receive an invite to the
-            Discord.)
+            The spirit of our hackathon is the connections and community we cultivate through events like 
+            this, so we highly encourage you to work with new people to make awesome projects! It is also 
+            allowed to form teams with people that you know or have worked with in the past. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Is it possible to work on a project we've already started for this
-            hackathon?
+            Is there anything else happening besides hacking?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            No, projects must begin from scratch at the start of the hackathon.
-            To be eligible for prizes, all work should be completed during the
-            event.
+            Yes! Other than the free food, we will also have “sidequests” that you can participate in 
+            to take a break from the hacking. Campus tours from our students, field games, anime watch 
+            parties, and card games are planned during the course of the hackathon, so come join us for 
+            some fun :D
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Do you offer travel support?
+            Are hackers allowed to stay in the building overnight?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            Unfortunately, we are unable to provide travel support.
+            Yes, hackers are allowed to stay in Huang Engineering Center overnight. However, please wear 
+            your badge at all times so that we can identify you as a part of the hackathon. If you are 
+            not wearing your badge, we may ask you to check-in again or leave the premises. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
           <div className={`text-white font-orbitron text-xl`}>
-            Will food and accommodations be provided?
+            What kind of food is offered? Will there be options for dietary needs/restrictions?
           </div>
           <div className={`text-white font-ptsans text-lg`}>
-            Most meals will be provided during the event, but not all.
-            Participants are responsible for their own travel and accommodation
-            arrangements.
-          </div>
-          <hr className={`shadow-glowing my-5`}></hr>
-          <div className={`text-white font-orbitron text-xl`}>
-            What technology should I bring?
-          </div>
-          <div className={`text-white font-ptsans text-lg`}>
-            We do not provide laptops, so it's strongly recommended that you
-            bring your own. Each team will be supplied with an XR device if
-            needed, and we will have additional specialized technology
-            available. You are also welcome to bring your own XR devices!
-          </div>
-          <hr className={`shadow-glowing my-5`}></hr>
-          <div className={`text-white font-orbitron text-xl`}>
-            How can I get involved in organizing the event?
-          </div>
-          <div className={`text-white font-ptsans text-lg`}>
-            If you're interested in helping organize or volunteering during the
-            hackathon, join our Discord at{" "}
-            <a className={`underline underline-offset-1`} href="stanfordxr.org">
-              stanfordxr.org
-            </a>{" "}
-            and reach out to the team!
+            We are looking to offer a variety of foods for each of the four meals during the hackathon. 
+            While we will try our best to meet the dietary needs and restrictions of as many people as 
+            possible, there is no guarantee we will always have food to fit your exact situation. This 
+            is a free hackathon to all attendees, and we will try our best within our means to meet your 
+            needs. Please note your dietary restrictions on the RSVP form so that we are aware of it ahead 
+            of time. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
         </div>
