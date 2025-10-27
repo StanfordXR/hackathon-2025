@@ -45,6 +45,14 @@ export default function NavBar() {
                   Tracks
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="underline underline-offset-2 block rounded text-white p-0"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
           <a
