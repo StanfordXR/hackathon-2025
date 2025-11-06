@@ -36,6 +36,8 @@ export const sponsors: SponsorTier[] = [
 		sponsors: [
 			{ name: "Shapes XR", imgsrc: "/sponsors/shapesxr.svg" },
 			{ name: "Snap AR", imgsrc: "/sponsors/Snap_AR.png", size: 170 },
+			{ name: "Red Bull", imgsrc: "/sponsors/Redbull.png", size: 170 },
+			{ name: "CVRE", imgsrc: "/sponsors/CVRE.png", size: 160 },
 		],
 	},
 ];
