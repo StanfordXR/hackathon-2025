@@ -10,8 +10,7 @@ export default function Home() {
     <main id="main">
       <div className="w-screen bg-immersive mb-[50px] pt-[140px] flex flex-col justify-center items-center">
         <div
-          className={`text-white font-semibold font-orbitron md:text-3xl text-xl mb-6`}
-        >
+          className={`text-white font-semibold font-orbitron md:text-3xl text-xl mb-6`}>
           Frequently asked questions
         </div>
         <div className={`w-[80%] mx-10 h-full`}>
@@ -76,6 +75,14 @@ export default function Home() {
             is a free hackathon to all attendees, and we will try our best within our means to meet your 
             needs. Please note your dietary restrictions on the RSVP form so that we are aware of it ahead 
             of time. 
+          </div>
+          <hr className={`shadow-glowing my-5`}></hr>
+          <div className={`text-white font-orbitron text-xl`}>
+            Will Immerse The Bay provide travel accommodations or reimbursements?
+          </div>
+          <div className={`text-white font-ptsans text-lg`}>
+            Unfortunately, Immerse The Bay 2025 cannot cover travel accomodations. As we grow each year, our hope
+            is to secure funds to provide a scholarship for under-resourced hackers in the future. 
           </div>
           <hr className={`shadow-glowing my-5`}></hr>
         </div>
