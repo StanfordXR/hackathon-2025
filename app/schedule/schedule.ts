@@ -3,7 +3,7 @@ import { ScheduleItem } from "../types";
 export const schedule: ScheduleItem[] = [
   {
     day: "Friday, November 14",
-    time: "10:00 am - 6:00 pm",
+    time: "11:00 am - 6:00 pm",
     location: "Huang Foyer",
     url: "",
     description: "Check-In & Merch / Workshops TBD",
