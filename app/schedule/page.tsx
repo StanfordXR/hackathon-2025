@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main id="main">
       <div className="w-[screen] bg-immersive py-[140px] flex flex-col justify-center items-center">
-        <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
+        <div className={`text-white font-semibold font-orbitron text-3xl`}>
           Schedule
         </div>
         <div className={`w-[85%] mx-10 h-full`}>
@@ -94,7 +94,7 @@ export default function Home() {
                             {/* Tooltip */}
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
-                              Description: Come find out!
+                              Description: Come learn about how to Mod, Map, and Master Beat Saber with multiple mentors from the top 1000 players in the nation!
                             </div>
                           </span>
                         </div>
@@ -208,8 +208,8 @@ export default function Home() {
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
-                              Description: Learn how to build for Apple Vision Pro, Android XR, and PICO headsets — using just HTML, React, CSS, and JavaScript. With **WebSpatial**, you can turn any 2D website into a spatial app in hours, not days. Build interactive travel planners, spatial productivity tools, 3D portfolios, or even immersive media dashboards — all with code you already know.<br /><br />
-                              We’ll also cover **SecureMR**, our mixed reality framework that lets you bring your own Computer Vision and ML models into Unity-powered XR apps. Think gesture-controlled interfaces, AI-driven fitness apps, smart home overlays, or spatial educational tools that respond to real-world objects.
+                              Description: Learn how to build for Apple Vision Pro, Android XR, and PICO headsets — using just HTML, React, CSS, and JavaScript. With WebSpatial, you can turn any 2D website into a spatial app in hours, not days. Build interactive travel planners, spatial productivity tools, 3D portfolios, or even immersive media dashboards — all with code you already know. <br /><br /> We’ll also cover SecureMR, our mixed reality framework that lets you bring your own Computer Vision and ML models into Unity-powered XR apps. Think gesture-controlled interfaces, AI-driven fitness apps, smart home overlays, or spatial educational tools that respond to real-world objects.
+
                             </div>
                           </span>
                         </div>
