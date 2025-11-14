@@ -32,7 +32,7 @@ export default function SponsorBar() {
                 alt={sponsor.name}
                 className="h-full object-contain"
                 style={{
-                  height: `${getNormalizedSize(sponsor.size)}%`,
+                  height: `${getNormalizedSize(sponsor.size) * 2}%`,
                 }}
               />
             ))

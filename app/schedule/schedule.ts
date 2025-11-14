@@ -3,10 +3,10 @@ import { ScheduleItem } from "../types";
 export const schedule: ScheduleItem[] = [
   {
     day: "Friday, November 14",
-    time: "10:00 am - 6:00 pm",
+    time: "11:00 am - 6:00 pm",
     location: "Huang Foyer",
     url: "",
-    description: "Check-In & Merch / Workshops TBD",
+    description: "Check-In & Merch",
   },
   {
     day: "Friday, November 14",
@@ -90,6 +90,6 @@ export const schedule: ScheduleItem[] = [
     time: "3:00 pm - 5:00 pm",
     location: "Huang Basement",
     url: "",
-    description: "Expo / Recruitment / Open-Floor",
+    description: "Project Expo / Networking",
   },
 ];
