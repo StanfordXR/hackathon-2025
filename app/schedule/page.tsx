@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { schedule } from "./schedule";
 import { ScheduleItem } from "../types";
+import { Menu } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Schedule | Immerse the Bay | Stanford",
@@ -16,7 +17,7 @@ export default function Home() {
         <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
           Schedule
         </div>
-        <div className={`w-[80%] mx-10 h-full`}>
+        <div className={`w-[85%] mx-10 h-full`}>
           
           {days.map((day) => {
             const items = schedule.filter((item) => item.day === day);
@@ -34,7 +35,7 @@ export default function Home() {
                 {!isFriday && (
                   <div className="text-white font-ptsans text-xl">
                     {items.map((item, index) => (
-                      <div key={index} className="mt-4">
+                      <div key={index} className="mt-6">
                         <div className="flex justify-between border-b border-white border-opacity-25">
                           <span className="font-semibold">{item.time}</span>
                           <span>{item.location}</span>
@@ -50,7 +51,7 @@ export default function Home() {
                   <div className="text-white font-ptsans text-xl">
 
                     {/* 1️⃣ First Friday event (before workshops) */}
-                    <div className="mt-4">
+                    <div className="mt-6">
                       <div className="flex justify-between border-b border-white border-opacity-25">
                         <span className="font-semibold">{items[0].time}</span>
                         <span>{items[0].location}</span>
@@ -59,9 +60,11 @@ export default function Home() {
                     </div>
 
                     {/* WORKSHOPS TITLE */}
-                    <div className="text-white font-orbitron text-2xl mt-10 mb-4">
+                    <div className="text-white font-orbitron text-2xl mt-10">
                       Workshops
                     </div>
+
+                    <hr className="mb-6 border-white border-opacity-40" />
 
                     {/* 3-column aligned workshop grid */}
                     <div className="grid grid-cols-1 md:grid-cols-[150px_1fr_1fr] gap-10 mt-4 text-white font-ptsans text-xl">
@@ -84,8 +87,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Mods, Maps, and Mastery
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             {/* Tooltip */}
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
@@ -111,8 +115,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Introduction to Unity
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -140,8 +145,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Building the AR Future
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -166,8 +172,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Develop with Snap Spectacles
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -195,8 +202,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Build for PICO XR, SecureMR, or Apple Vision Pro with WebSpatial
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -222,8 +230,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Raven AR Glasses: Intro + SDK Preview
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -251,8 +260,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Introduction to Brain Computer Interfaces
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -277,8 +287,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Empowering Creativity: How Meshy Facilitates 3D Asset Creation with AI in XR-Hacks
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -307,8 +318,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Start in XR Today: Ideation, Prototyping & Social VR
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -333,8 +345,9 @@ export default function Home() {
                         <hr className="border-white border-opacity-25 my-1" />
 
                         <div className="relative w-fit">
-                          <span className="cursor-pointer group">
+                          <span className="cursor-pointer group flex items-center gap-2">
                             Artificial Touch: How To Let People Feel Virtual Objects
+                            <Menu className="w-4 h-4 flex-shrink-0" />
 
                             <div className="absolute left-0 mt-2 w-[450px] max-w-[80vw] p-4 rounded-lg bg-black/90 text-white text-sm 
                         opacity-0 group-hover:opacity-100 transition duration-200 z-50 pointer-events-none">
@@ -346,11 +359,10 @@ export default function Home() {
 
                     </div>
 
-                    <hr className="my-10 border-white border-opacity-40" />
 
                     {/* 3️⃣ Remaining Friday items */}
                     {items.slice(1).map((item, index) => (
-                      <div key={index} className="mt-4">
+                      <div key={index} className="mt-6">
                         <div className="flex justify-between border-b border-white border-opacity-25">
                           <span className="font-semibold">{item.time}</span>
                           <span>{item.location}</span>
@@ -367,7 +379,7 @@ export default function Home() {
 
 
 
-          /* Column format without workshop column. */
+          {/* Column format without workshop column. */}
           {/* {days.map((day) => (
             <div key={day}>
               <div className={`text-white font-orbitron text-3xl mt-[70px]`}>

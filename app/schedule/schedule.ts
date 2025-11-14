@@ -90,6 +90,6 @@ export const schedule: ScheduleItem[] = [
     time: "3:00 pm - 5:00 pm",
     location: "Huang Basement",
     url: "",
-    description: "Expo / Recruitment / Open-Floor",
+    description: "Project Expo / Networking",
   },
 ];
