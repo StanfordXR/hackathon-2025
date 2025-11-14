@@ -6,7 +6,7 @@ export const schedule: ScheduleItem[] = [
     time: "11:00 am - 6:00 pm",
     location: "Huang Foyer",
     url: "",
-    description: "Check-In & Merch / Workshops TBD",
+    description: "Check-In & Merch",
   },
   {
     day: "Friday, November 14",

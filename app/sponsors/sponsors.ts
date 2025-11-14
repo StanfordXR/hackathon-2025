@@ -25,10 +25,10 @@ export const sponsors: SponsorTier[] = [
 		tier: "Gold",
 		style: { color: "gold" },
 		sponsors: [
-			{ name: "Raven Resonance", imgsrc: "/sponsors/Raven.png" },
-			{ name: "Afference", imgsrc: "/sponsors/Afference.png" },
-			{ name: "XREAL", imgsrc: "/sponsors/XREAL.png" },
-			{ name: "Meshy AI", imgsrc: "/sponsors/Meshy.png", size: 115 },
+			{ name: "Raven Resonance", imgsrc: "/sponsors/Raven.png", size: 91 },
+			{ name: "Afference", imgsrc: "/sponsors/Afference.png", size: 91 },
+			{ name: "XREAL", imgsrc: "/sponsors/XREAL.png", size: 91 },
+			{ name: "Meshy AI", imgsrc: "/sponsors/Meshy.png", size: 110 },
 		],
 	},
 	{
@@ -48,6 +48,8 @@ export const sponsors: SponsorTier[] = [
 			{ name: "Red Bull", imgsrc: "/sponsors/Redbull.png", size: 300 },
 			{ name: "Shake Shack", imgsrc: "/sponsors/shakeshack.png", size: 150 },
 			{ name: "Panda Express", imgsrc: "/sponsors/Panda.png", size: 260 },
+			{ name: "Insomnia", imgsrc: "/sponsors/Insomnia.png", size: 270 },
+			{ name: "Ike's Love and Sandwiches", imgsrc: "/sponsors/Ike.png", size: 450 },
 		],
 	},
 ];
