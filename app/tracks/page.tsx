@@ -46,7 +46,7 @@ export default function Home() {
           <div className={`text-white font-ptsans text-xl`}>
           <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
               <span>1. Moonlake AI</span>
-              <span>Stanford XR Sponsored</span>
+              <span>Company Sponsored</span>
             </div>
             <span>2. XReal</span>
             <br />
