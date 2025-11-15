@@ -12,21 +12,31 @@ export default function Home() {
         <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
           Tracks
         </div>
-        <div className="text-white font-orbitron text-3xl mt-24 p-32">Releasing November 14 • 9 PM PT</div>
+        {/*<div className="text-white font-orbitron text-3xl mt-24 p-32">Releasing November 14 • 9 PM PT</div>*/}
 
         <div className={`w-[80%] mx-10 h-full`}>
-          {/* This a temporarily removed Tracks display
-
-          <div className={`text-white font-orbitron text-3xl`}>
-            Primary Tracks
+          
+        <div className={`text-white font-orbitron text-3xl`}>
+            Primary Tracks 
           </div>
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
             <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>TBD</span>
-              <span>TBD</span>
+              <span>1. Creative Zenith - Best of Creative XR</span>
+              <span>Stanford XR Sponsored</span>
             </div>
-            TBD
+            <span>2. Virtuous Reality - Best of Social Good and XR</span>
+            <br />
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span>3. AI Horizons - Best of AI with XR</span>
+            </div>
+            <span>4. Game Changer - Best of Gaming in XR</span>
+            <br />
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span className={`font-semibold`}>Bonus Track!</span>
+            </div>
+            <span>5. Wild West - Thinking Outside the Box</span>
+            <br />
             <br />
           </div>
           <div className={`text-white font-orbitron text-3xl`}>
@@ -34,23 +44,32 @@ export default function Home() {
           </div>
           <hr className={`shadow-glowing my-1 mb-4`}></hr>
           <div className={`text-white font-ptsans text-xl`}>
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span className={`font-semibold`}>TBD</span>
-              <span>TBD</span>
+          <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span>1. Moonlake AI</span>
+              <span>Stanford XR Sponsored</span>
             </div>
-            TBD
-            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
-              <span>TBD</span>
-            </div>
-            TBD
+            <span>2. XReal</span>
             <br />
-          </div>*/}
-
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span>3. Afference</span>
+            </div>
+            <span>4. OpenBCI</span>
+            <br />
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span>5. ByteDance</span>
+            </div>
+            <span>6. XR Bootcamp Powered by Meta</span>
+            <br />
+            <div className="flex flex-row justify-between border-b border-white border-opacity-25 mt-4">
+              <span>7. Meta</span>
+            </div>
+            <br />
+          </div>
           <div
             className={`mt-[100px] text-white underline font-ptsans text-2xl flex align-center justify-center`}
           >
             <a href="/slides.pdf">
-              See Immerse The Bay 2024's Tracks & Prizes Deck
+              See Immerse The Bay 2025's Tracks & Prizes Deck!
             </a>
           </div>
         </div>
