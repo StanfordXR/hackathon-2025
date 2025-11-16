@@ -12,7 +12,12 @@ export default function Home() {
         <div className={`text-white font-semibold font-orbitron text-3xl mb-6`}>
           Tracks
         </div>
-        <div className="text-white font-orbitron text-3xl mt-24 p-32">Releasing November 14 • 9 PM PT</div>
+
+        <div
+          className={`my-48 text-white underline font-ptsans text-5xl flex align-center justify-center`}
+        >
+          <a href="/slides2025.pdf">2025 Tracks & Prizes</a>
+        </div>
 
         <div className={`w-[80%] mx-10 h-full`}>
           {/* This a temporarily removed Tracks display
@@ -49,7 +54,7 @@ export default function Home() {
           <div
             className={`mt-[100px] text-white underline font-ptsans text-2xl flex align-center justify-center`}
           >
-            <a href="/slides.pdf">
+            <a href="/slides2024.pdf">
               See Immerse The Bay 2024's Tracks & Prizes Deck
             </a>
           </div>
